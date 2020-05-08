@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace TimeJoJoRedactor
+namespace GameFramework
 {
 	partial class MainMenu
 	{

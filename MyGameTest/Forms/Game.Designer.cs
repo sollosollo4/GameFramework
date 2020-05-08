@@ -1,4 +1,4 @@
-﻿namespace TimeJoJoRedactor.Forms
+﻿namespace GameFramework.Forms
 {
     partial class Game
     {
@@ -38,7 +38,7 @@
             this.Guild_Icon = new System.Windows.Forms.PictureBox();
             this.Talking_Icon = new System.Windows.Forms.PictureBox();
             this.Settings_Icon = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.MainHeroIcon = new System.Windows.Forms.PictureBox();
             this.MainInterface.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HeroIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackPackIcon)).BeginInit();
@@ -48,7 +48,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Guild_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Talking_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_Icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainHeroIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // MainInterface
@@ -186,13 +186,13 @@
             this.Settings_Icon.TabIndex = 0;
             this.Settings_Icon.TabStop = false;
             // 
-            // pictureBox8
+            // MainHeroIcon
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox8.TabIndex = 1;
-            this.pictureBox8.TabStop = false;
+            this.MainHeroIcon.Location = new System.Drawing.Point(13, 13);
+            this.MainHeroIcon.Name = "MainHeroIcon";
+            this.MainHeroIcon.Size = new System.Drawing.Size(100, 100);
+            this.MainHeroIcon.TabIndex = 1;
+            this.MainHeroIcon.TabStop = false;
             // 
             // Game
             // 
@@ -200,12 +200,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1600, 900);
-            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.MainHeroIcon);
             this.Controls.Add(this.MainInterface);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1598, 858);
             this.Name = "Game";
             this.Text = "Game";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
             this.MainInterface.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HeroIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackPackIcon)).EndInit();
@@ -215,7 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Guild_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Talking_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_Icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MainHeroIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,6 +232,6 @@
         private System.Windows.Forms.PictureBox Guild_Icon;
         private System.Windows.Forms.PictureBox Talking_Icon;
         private System.Windows.Forms.PictureBox Settings_Icon;
-        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox MainHeroIcon;
     }
 }

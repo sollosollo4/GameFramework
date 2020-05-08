@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9292A601-E2F9-431D-AEE3-FE2A2D4DF501}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TimeJoJoRedactor</RootNamespace>
-    <AssemblyName>TimeJoJoRedactor</AssemblyName>
+    <RootNamespace>GameFramework</RootNamespace>
+    <AssemblyName>GameFramework</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -80,6 +80,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

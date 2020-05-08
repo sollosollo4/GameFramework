@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TimeJoJoRedactor.Forms
+namespace GameFramework.Forms
 {
     public partial class Game : Form
     {
@@ -24,6 +24,11 @@ namespace TimeJoJoRedactor.Forms
         {
             WindowState = FormWindowState.Normal;
             WindowState = FormWindowState.Maximized;
+        }
+
+        private void Game_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
