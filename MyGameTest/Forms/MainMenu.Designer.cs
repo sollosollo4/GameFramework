@@ -228,7 +228,7 @@ namespace GameFramework
             this.comboBox1.BackColor = System.Drawing.Color.White;
             this.SettingsPanel.SetColumnSpan(this.comboBox1, 2);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(390, 115);
+            this.comboBox1.Location = new System.Drawing.Point(390, 125);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 7, 3, 0);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(768, 41);
@@ -249,7 +249,7 @@ namespace GameFramework
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1600, 900);
+            this.ClientSize = new System.Drawing.Size(1600, 881);
             this.Controls.Add(this.SettingsPanel);
             this.Controls.Add(this.MainMenuPanel);
             this.Font = new System.Drawing.Font("Constantia", 20.25F);

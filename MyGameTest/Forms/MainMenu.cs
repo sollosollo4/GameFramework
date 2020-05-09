@@ -1,4 +1,4 @@
-﻿using Framework;
+﻿using Framework.source;
 using Framework.Controls;
 using System;
 using System.Collections.Generic;
@@ -16,6 +16,7 @@ namespace GameFramework
     public partial class MainMenu : Form
     {
         int tickCount;
+        public MainScript script;
 
         public MainMenu()
         {
@@ -24,8 +25,10 @@ namespace GameFramework
             SetDefaultParametrs();
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
-            Functions.Graphic graphic = new Functions.Graphic();
-            graphic.SetAllButtonsMouseEvents(MainMenuPanel.Controls, Color.FromArgb(150, 166, 230, 230), Color.FromArgb(150, 0, 34, 12));
+            script = new MainScript().SetGraphicClass(MainMenuPanel.Controls, 
+                                                        Color.FromArgb(100, 100, 0, 75), 
+                                                            Color.FromArgb(100, 75, 0, 100))
+                .LoadAllScripts();
         }
 
         private void SetDefaultParametrs()

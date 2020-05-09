@@ -38,8 +38,11 @@
             this.Guild_Icon = new System.Windows.Forms.PictureBox();
             this.Talking_Icon = new System.Windows.Forms.PictureBox();
             this.Settings_Icon = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.HeroBackGroundPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.BackGroundItem = new System.Windows.Forms.Panel();
+            this.ItemIcon = new System.Windows.Forms.Panel();
             this.MainInterface.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HeroIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackPackIcon)).BeginInit();
@@ -49,8 +52,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Guild_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Talking_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_Icon)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.HeroBackGroundPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.BackGroundItem.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainInterface
@@ -196,16 +200,16 @@
             this.Settings_Icon.TabStop = false;
             this.Settings_Icon.Click += new System.EventHandler(this.Settings_Icon_Click);
             // 
-            // panel1
+            // HeroBackGroundPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(13, 13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 100);
-            this.panel1.TabIndex = 1;
+            this.HeroBackGroundPanel.BackColor = System.Drawing.Color.Transparent;
+            this.HeroBackGroundPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("HeroBackGroundPanel.BackgroundImage")));
+            this.HeroBackGroundPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.HeroBackGroundPanel.Controls.Add(this.pictureBox1);
+            this.HeroBackGroundPanel.Location = new System.Drawing.Point(13, 13);
+            this.HeroBackGroundPanel.Name = "HeroBackGroundPanel";
+            this.HeroBackGroundPanel.Size = new System.Drawing.Size(100, 100);
+            this.HeroBackGroundPanel.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -218,13 +222,43 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(525, 205);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(322, 255);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // BackGroundItem
+            // 
+            this.BackGroundItem.BackColor = System.Drawing.Color.OrangeRed;
+            this.BackGroundItem.Controls.Add(this.ItemIcon);
+            this.BackGroundItem.Location = new System.Drawing.Point(359, 319);
+            this.BackGroundItem.Margin = new System.Windows.Forms.Padding(0);
+            this.BackGroundItem.Name = "BackGroundItem";
+            this.BackGroundItem.Size = new System.Drawing.Size(60, 60);
+            this.BackGroundItem.TabIndex = 3;
+            // 
+            // ItemIcon
+            // 
+            this.ItemIcon.BackColor = System.Drawing.Color.White;
+            this.ItemIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ItemIcon.BackgroundImage")));
+            this.ItemIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ItemIcon.Location = new System.Drawing.Point(3, 3);
+            this.ItemIcon.Margin = new System.Windows.Forms.Padding(0);
+            this.ItemIcon.Name = "ItemIcon";
+            this.ItemIcon.Size = new System.Drawing.Size(54, 54);
+            this.ItemIcon.TabIndex = 4;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.BackGroundItem);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.HeroBackGroundPanel);
             this.Controls.Add(this.MainInterface);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1598, 858);
@@ -241,8 +275,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Guild_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Talking_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_Icon)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.HeroBackGroundPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.BackGroundItem.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -258,7 +293,10 @@
         private System.Windows.Forms.PictureBox Guild_Icon;
         private System.Windows.Forms.PictureBox Talking_Icon;
         private System.Windows.Forms.PictureBox Settings_Icon;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel HeroBackGroundPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel BackGroundItem;
+        private System.Windows.Forms.Panel ItemIcon;
     }
 }
