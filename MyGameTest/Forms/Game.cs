@@ -12,8 +12,10 @@ namespace GameFramework.Forms
 {
     public partial class Game : Form
     {
-        public Game()
+        private readonly MainMenu mainMenu;
+        public Game(MainMenu mainMenu)
         {
+            this.mainMenu = mainMenu;
             InitializeComponent();
 
             SetDefaultParametrs();
@@ -27,6 +29,51 @@ namespace GameFramework.Forms
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void Game_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainMenu.Close();
+        }
+
+        private void HeroIcon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BackPackIcon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Achivments_Icon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Skills_Icon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Map_Icon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Guild_Icon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Talking_Icon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Settings_Icon_Click(object sender, EventArgs e)
         {
 
         }

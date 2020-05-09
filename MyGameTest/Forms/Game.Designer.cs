@@ -38,7 +38,8 @@
             this.Guild_Icon = new System.Windows.Forms.PictureBox();
             this.Talking_Icon = new System.Windows.Forms.PictureBox();
             this.Settings_Icon = new System.Windows.Forms.PictureBox();
-            this.MainHeroIcon = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainInterface.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HeroIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackPackIcon)).BeginInit();
@@ -48,7 +49,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Guild_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Talking_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_Icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MainHeroIcon)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MainInterface
@@ -94,6 +96,7 @@
             this.HeroIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.HeroIcon.TabIndex = 0;
             this.HeroIcon.TabStop = false;
+            this.HeroIcon.Click += new System.EventHandler(this.HeroIcon_Click);
             // 
             // BackPackIcon
             // 
@@ -107,6 +110,7 @@
             this.BackPackIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BackPackIcon.TabIndex = 0;
             this.BackPackIcon.TabStop = false;
+            this.BackPackIcon.Click += new System.EventHandler(this.BackPackIcon_Click);
             // 
             // Achivments_Icon
             // 
@@ -120,6 +124,7 @@
             this.Achivments_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Achivments_Icon.TabIndex = 0;
             this.Achivments_Icon.TabStop = false;
+            this.Achivments_Icon.Click += new System.EventHandler(this.Achivments_Icon_Click);
             // 
             // Skills_Icon
             // 
@@ -133,6 +138,7 @@
             this.Skills_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Skills_Icon.TabIndex = 0;
             this.Skills_Icon.TabStop = false;
+            this.Skills_Icon.Click += new System.EventHandler(this.Skills_Icon_Click);
             // 
             // Map_Icon
             // 
@@ -146,6 +152,7 @@
             this.Map_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Map_Icon.TabIndex = 0;
             this.Map_Icon.TabStop = false;
+            this.Map_Icon.Click += new System.EventHandler(this.Map_Icon_Click);
             // 
             // Guild_Icon
             // 
@@ -159,6 +166,7 @@
             this.Guild_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Guild_Icon.TabIndex = 0;
             this.Guild_Icon.TabStop = false;
+            this.Guild_Icon.Click += new System.EventHandler(this.Guild_Icon_Click);
             // 
             // Talking_Icon
             // 
@@ -172,6 +180,7 @@
             this.Talking_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Talking_Icon.TabIndex = 0;
             this.Talking_Icon.TabStop = false;
+            this.Talking_Icon.Click += new System.EventHandler(this.Talking_Icon_Click);
             // 
             // Settings_Icon
             // 
@@ -185,27 +194,43 @@
             this.Settings_Icon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Settings_Icon.TabIndex = 0;
             this.Settings_Icon.TabStop = false;
+            this.Settings_Icon.Click += new System.EventHandler(this.Settings_Icon_Click);
             // 
-            // MainHeroIcon
+            // panel1
             // 
-            this.MainHeroIcon.Location = new System.Drawing.Point(13, 13);
-            this.MainHeroIcon.Name = "MainHeroIcon";
-            this.MainHeroIcon.Size = new System.Drawing.Size(100, 100);
-            this.MainHeroIcon.TabIndex = 1;
-            this.MainHeroIcon.TabStop = false;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(13, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(100, 100);
+            this.panel1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Maroon;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1600, 900);
-            this.Controls.Add(this.MainHeroIcon);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.MainInterface);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1598, 858);
             this.Name = "Game";
             this.Text = "Game";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Game_FormClosed);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
             this.MainInterface.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HeroIcon)).EndInit();
@@ -216,7 +241,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Guild_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Talking_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_Icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MainHeroIcon)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,6 +258,7 @@
         private System.Windows.Forms.PictureBox Guild_Icon;
         private System.Windows.Forms.PictureBox Talking_Icon;
         private System.Windows.Forms.PictureBox Settings_Icon;
-        private System.Windows.Forms.PictureBox MainHeroIcon;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

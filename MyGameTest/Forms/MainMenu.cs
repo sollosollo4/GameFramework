@@ -61,9 +61,9 @@ namespace GameFramework
 
         private void MainMenuButton_NewGame_Click(object sender, EventArgs e)
         {
-            Forms.Game game = new Forms.Game();
+            Forms.Game game = new Forms.Game(this);
+            game.Show();
             Hide();
-            game.ShowDialog();
         }
 
         private void GradientChange_Tick(object sender, EventArgs e)
