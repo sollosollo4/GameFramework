@@ -52,6 +52,29 @@
     <Compile Include="Controls\GradientLabel.Designer.cs">
       <DependentUpon>GradientLabel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ItemBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ItemBox.Designer.cs">
+      <DependentUpon>ItemBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MultiToolTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\MultiToolTip.Designer.cs">
+      <DependentUpon>MultiToolTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\UserPanel.Designer.cs">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="source\scripts\Graphic.cs" />
     <Compile Include="source\scripts\MainScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +92,18 @@
     <Folder Include="source\scripts\auth\" />
     <Folder Include="source\scripts\forms\" />
     <Folder Include="source\scripts\world\ItemsScripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\MultiToolTip.resx">
+      <DependentUpon>MultiToolTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserPanel.resx">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

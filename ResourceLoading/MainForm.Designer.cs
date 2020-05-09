@@ -31,6 +31,9 @@
             this.AddItem = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.ItemBitMap = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -62,6 +65,7 @@
             this.NeedLevelTextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ItemNameTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -70,8 +74,10 @@
             this.найтиПредметToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.найтиСпособностьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.найтиУмениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemBitMap)).BeginInit();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -102,6 +108,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.ItemBitMap);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.label2);
@@ -110,6 +119,7 @@
             this.tabPage1.Controls.Add(this.NeedLevelTextBox);
             this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.ItemNameTextBox);
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.AddItem);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
@@ -118,6 +128,37 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Items";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(761, 9);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "<";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(842, 9);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = ">";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // ItemBitMap
+            // 
+            this.ItemBitMap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(255)))), ((int)(((byte)(26)))), ((int)(((byte)(36)))));
+            this.ItemBitMap.Location = new System.Drawing.Point(644, 5);
+            this.ItemBitMap.Name = "ItemBitMap";
+            this.ItemBitMap.Size = new System.Drawing.Size(100, 100);
+            this.ItemBitMap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ItemBitMap.TabIndex = 7;
+            this.ItemBitMap.TabStop = false;
+            this.ItemBitMap.Click += new System.EventHandler(this.ItemBitMap_Click);
             // 
             // label3
             // 
@@ -142,7 +183,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.59036F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.40964F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 440F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 444F));
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.DamageTextBox, 1, 1);
@@ -200,9 +241,9 @@
             // DamageTextBox
             // 
             this.DamageTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DamageTextBox.Location = new System.Drawing.Point(160, 27);
+            this.DamageTextBox.Location = new System.Drawing.Point(159, 27);
             this.DamageTextBox.Name = "DamageTextBox";
-            this.DamageTextBox.Size = new System.Drawing.Size(168, 23);
+            this.DamageTextBox.Size = new System.Drawing.Size(165, 23);
             this.DamageTextBox.TabIndex = 3;
             // 
             // label6
@@ -216,7 +257,7 @@
             // 
             // FireMTextBox
             // 
-            this.FireMTextBox.Location = new System.Drawing.Point(473, 3);
+            this.FireMTextBox.Location = new System.Drawing.Point(469, 3);
             this.FireMTextBox.Name = "FireMTextBox";
             this.FireMTextBox.Size = new System.Drawing.Size(180, 23);
             this.FireMTextBox.TabIndex = 1;
@@ -224,9 +265,9 @@
             // AgilityTextBox
             // 
             this.AgilityTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AgilityTextBox.Location = new System.Drawing.Point(160, 51);
+            this.AgilityTextBox.Location = new System.Drawing.Point(159, 51);
             this.AgilityTextBox.Name = "AgilityTextBox";
-            this.AgilityTextBox.Size = new System.Drawing.Size(168, 23);
+            this.AgilityTextBox.Size = new System.Drawing.Size(165, 23);
             this.AgilityTextBox.TabIndex = 3;
             // 
             // comboBox2
@@ -235,9 +276,9 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Physical",
             "Magical"});
-            this.comboBox2.Location = new System.Drawing.Point(160, 3);
+            this.comboBox2.Location = new System.Drawing.Point(159, 3);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(168, 23);
+            this.comboBox2.Size = new System.Drawing.Size(165, 23);
             this.comboBox2.TabIndex = 2;
             // 
             // label7
@@ -252,9 +293,9 @@
             // ForceTextBox
             // 
             this.ForceTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ForceTextBox.Location = new System.Drawing.Point(160, 85);
+            this.ForceTextBox.Location = new System.Drawing.Point(159, 85);
             this.ForceTextBox.Name = "ForceTextBox";
-            this.ForceTextBox.Size = new System.Drawing.Size(168, 23);
+            this.ForceTextBox.Size = new System.Drawing.Size(165, 23);
             this.ForceTextBox.TabIndex = 3;
             // 
             // label8
@@ -269,15 +310,15 @@
             // IntellectTextBox
             // 
             this.IntellectTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.IntellectTextBox.Location = new System.Drawing.Point(160, 116);
+            this.IntellectTextBox.Location = new System.Drawing.Point(159, 116);
             this.IntellectTextBox.Name = "IntellectTextBox";
-            this.IntellectTextBox.Size = new System.Drawing.Size(168, 23);
+            this.IntellectTextBox.Size = new System.Drawing.Size(165, 23);
             this.IntellectTextBox.TabIndex = 3;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(334, 0);
+            this.label9.Location = new System.Drawing.Point(330, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 15);
             this.label9.TabIndex = 4;
@@ -286,7 +327,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(334, 24);
+            this.label10.Location = new System.Drawing.Point(330, 24);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(105, 15);
             this.label10.TabIndex = 4;
@@ -295,7 +336,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(334, 48);
+            this.label11.Location = new System.Drawing.Point(330, 48);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(126, 15);
             this.label11.TabIndex = 4;
@@ -304,7 +345,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(334, 82);
+            this.label12.Location = new System.Drawing.Point(330, 82);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(105, 15);
             this.label12.TabIndex = 4;
@@ -313,7 +354,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(334, 113);
+            this.label13.Location = new System.Drawing.Point(330, 113);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(105, 15);
             this.label13.TabIndex = 4;
@@ -321,28 +362,28 @@
             // 
             // IceMTextBox
             // 
-            this.IceMTextBox.Location = new System.Drawing.Point(473, 27);
+            this.IceMTextBox.Location = new System.Drawing.Point(469, 27);
             this.IceMTextBox.Name = "IceMTextBox";
             this.IceMTextBox.Size = new System.Drawing.Size(180, 23);
             this.IceMTextBox.TabIndex = 1;
             // 
             // NatureMTextBox
             // 
-            this.NatureMTextBox.Location = new System.Drawing.Point(473, 51);
+            this.NatureMTextBox.Location = new System.Drawing.Point(469, 51);
             this.NatureMTextBox.Name = "NatureMTextBox";
             this.NatureMTextBox.Size = new System.Drawing.Size(180, 23);
             this.NatureMTextBox.TabIndex = 1;
             // 
             // LigthMTextBox
             // 
-            this.LigthMTextBox.Location = new System.Drawing.Point(473, 85);
+            this.LigthMTextBox.Location = new System.Drawing.Point(469, 85);
             this.LigthMTextBox.Name = "LigthMTextBox";
             this.LigthMTextBox.Size = new System.Drawing.Size(180, 23);
             this.LigthMTextBox.TabIndex = 1;
             // 
             // DarkMTextBox
             // 
-            this.DarkMTextBox.Location = new System.Drawing.Point(473, 116);
+            this.DarkMTextBox.Location = new System.Drawing.Point(469, 116);
             this.DarkMTextBox.Name = "DarkMTextBox";
             this.DarkMTextBox.Size = new System.Drawing.Size(180, 23);
             this.DarkMTextBox.TabIndex = 1;
@@ -358,9 +399,9 @@
             // 
             // ScriptsNamesTextBox
             // 
-            this.ScriptsNamesTextBox.Location = new System.Drawing.Point(160, 179);
+            this.ScriptsNamesTextBox.Location = new System.Drawing.Point(159, 179);
             this.ScriptsNamesTextBox.Name = "ScriptsNamesTextBox";
-            this.ScriptsNamesTextBox.Size = new System.Drawing.Size(168, 23);
+            this.ScriptsNamesTextBox.Size = new System.Drawing.Size(165, 23);
             this.ScriptsNamesTextBox.TabIndex = 1;
             // 
             // label2
@@ -419,6 +460,16 @@
             this.ItemNameTextBox.Name = "ItemNameTextBox";
             this.ItemNameTextBox.Size = new System.Drawing.Size(156, 23);
             this.ItemNameTextBox.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(763, 437);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 27);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Сохранить данные";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage2
             // 
@@ -503,6 +554,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ItemBitMap)).EndInit();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -557,6 +609,11 @@
         private System.Windows.Forms.ToolStripMenuItem найтиПредметToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem найтиСпособностьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem найтиУмениеToolStripMenuItem;
+        private System.Windows.Forms.PictureBox ItemBitMap;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
 

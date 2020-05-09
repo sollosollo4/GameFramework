@@ -30,8 +30,8 @@ namespace Framework.source.scripts.world
 
         private readonly Color[] ItemQualityColors = new Color[(int)ItemQuality.Unreal + 1]
         {
-            Color.Silver,
-            Color.White,
+            Color.DarkSlateGray,
+            Color.LightGray,
             Color.PaleGreen,
             Color.RoyalBlue,
             Color.DarkMagenta,

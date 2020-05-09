@@ -64,7 +64,7 @@ namespace GameFramework
 
         private void MainMenuButton_NewGame_Click(object sender, EventArgs e)
         {
-            Forms.Game game = new Forms.Game(this);
+            Forms.Game game = new Forms.Game(this, script);
             game.Show();
             Hide();
         }

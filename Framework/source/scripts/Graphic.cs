@@ -73,5 +73,63 @@ namespace Framework.source
             button.Paint += But_Paint;
             button.Refresh();
         }
+
+
+        public void SetAllPictureBoxMouseEvents(ControlCollection controls, Color c1, Color c2)
+        {
+            foreach (var button in controls)
+            {
+                var but = button as PictureBox;
+                if (but == null)
+                {
+                    throw new Exception("Один из элементов коллекции ControlCollection в главном меню игры не является PictureBox, из за чего вызов метода SetAllPictureBoxMuseEvents невозможен");
+                }
+
+                int countVs = controls.Count;
+                color1 = c1;
+                color2 = c2;
+
+                but.MouseEnter += Pb_MouseEnter;
+                but.MouseLeave += Pb_MouseLeave;
+            }
+        }
+
+        private void Pb_MouseLeave(object sender, EventArgs e)
+        {
+            var pb = sender as PictureBox;
+            if (pb == null)
+            {
+                throw new Exception("Один из элементов коллекции ControlCollection в главном меню игры не является PictureBox, из за чего вызов метода SetAllPictureBoxMuseEvents невозможен");
+            }
+
+            pb.Paint -= pb_Paint;
+            pb.Refresh();
+        }
+
+        private void pb_Paint(object sender, PaintEventArgs e)
+        {
+            var pb = sender as PictureBox;
+            if (pb == null && pb.Tag is true)
+            {
+                throw new Exception("Один из элементов коллекции ControlCollection в главном меню игры не является Button, из за чего вызов метода SetAllPictureBoxMuseEvents невозможен");
+            }
+
+            LinearGradientBrush gradientBrush = new LinearGradientBrush(pb.DisplayRectangle, color1, color2, 90F);
+            Graphics g = e.Graphics;
+
+            g.FillRectangle(gradientBrush, pb.DisplayRectangle);
+        }
+
+        private void Pb_MouseEnter(object sender, EventArgs e)
+        {
+            var pb = sender as PictureBox;
+            if (pb == null)
+            {
+                throw new Exception("Один из элементов коллекции ControlCollection в главном меню игры не является PictureBox, из за чего вызов метода SetAllPictureBoxMuseEvents невозможен");
+            }
+
+            pb.Paint += pb_Paint;
+            pb.Refresh();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Framework.source.scripts.world;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +15,13 @@ namespace ResourceLoading
 {
     public partial class MainForm : Form
     {
-        List<Framework.source.scripts.world.ItemEntity> addingItems;
-
+        List<ItemEntity> addingItems;
+        ItemEntity CurrentItem;
+        ItemEntity LastIndex;
+        static int index;
         public MainForm()
         {
+            index = 0;
             InitializeComponent();
             addingItems = new List<Framework.source.scripts.world.ItemEntity>();
         }
@@ -46,85 +50,81 @@ namespace ResourceLoading
             {
                 Framework.source.scripts.world.Items.CommonItems commonItem = new Framework.source.scripts.world.Items.CommonItems();
 
-                commonItem.ItemName = new Framework.source.scripts.world.ItemName().GetItemName(ItemNameTextBox.Text, Convert.ToInt32(comboBox1.SelectedValue));
+                commonItem.ItemIcon = ItemBitMap.Image;
+                commonItem.ItemName = new ItemName().GetItemName(ItemNameTextBox.Text, Convert.ToInt32(comboBox1.SelectedValue));
 
                 commonItem.IntableCharacters.Add(
-                    new Framework.source.scripts.world.ItemCharacter<int>()
+                    new ItemCharacter<int>()
                     { 
                         CharacterName = "DamageType", 
                         CharacterValue = comboBox2.Text == "Physical" ? 0 : 1
                     });
 
                 commonItem.IntableCharacters.Add(
-                    new Framework.source.scripts.world.ItemCharacter<int>()
+                    new ItemCharacter<int>()
                     {
                         CharacterName = "Damage",
                         CharacterValue = Convert.ToInt32(DamageTextBox.Text)
                     });
 
                 commonItem.IntableCharacters.Add(
-                    new Framework.source.scripts.world.ItemCharacter<int>()
+                    new ItemCharacter<int>()
                     {
                         CharacterName = "Agility",
                         CharacterValue = Convert.ToInt32(AgilityTextBox.Text)
                     });
 
                 commonItem.IntableCharacters.Add(
-                    new Framework.source.scripts.world.ItemCharacter<int>()
+                    new ItemCharacter<int>()
                     {
                         CharacterName = "Force",
                         CharacterValue = Convert.ToInt32(ForceTextBox.Text)
                     });
 
                 commonItem.IntableCharacters.Add(
-                    new Framework.source.scripts.world.ItemCharacter<int>()
+                    new ItemCharacter<int>()
                     {
                         CharacterName = "Intellect",
                         CharacterValue = Convert.ToInt32(IntellectTextBox.Text)
                     });
 
                 commonItem.IntableCharacters.Add(
-                    new Framework.source.scripts.world.ItemCharacter<int>()
+                    new ItemCharacter<int>()
                     {
                         CharacterName = "FireM",
                         CharacterValue = Convert.ToInt32(FireMTextBox.Text)
                     });
 
                 commonItem.IntableCharacters.Add(
-                    new Framework.source.scripts.world.ItemCharacter<int>()
+                    new ItemCharacter<int>()
                     {
                         CharacterName = "IceM",
                         CharacterValue = Convert.ToInt32(IceMTextBox.Text)
                     });
 
                 commonItem.IntableCharacters.Add(
-                    new Framework.source.scripts.world.ItemCharacter<int>()
+                    new ItemCharacter<int>()
                     {
                         CharacterName = "NatureM",
                         CharacterValue = Convert.ToInt32(NatureMTextBox.Text)
                     });
 
                 commonItem.IntableCharacters.Add(
-                    new Framework.source.scripts.world.ItemCharacter<int>()
+                    new ItemCharacter<int>()
                     {
                         CharacterName = "LigthM",
                         CharacterValue = Convert.ToInt32(LigthMTextBox.Text)
                     });
 
                 commonItem.IntableCharacters.Add(
-                    new Framework.source.scripts.world.ItemCharacter<int>()
+                    new ItemCharacter<int>()
                     {
                         CharacterName = "DarkM",
                         CharacterValue = Convert.ToInt32(DarkMTextBox.Text)
                     });
 
                 addingItems.Add(commonItem);
-
-                BinaryFormatter formatter = new BinaryFormatter();
-                using (FileStream fs = new FileStream(Framework.source.scripts.world.ItemsManager.ResourceFileSave, FileMode.OpenOrCreate))
-                {
-                    formatter.Serialize(fs, addingItems);
-                }
+                CurrentItem = commonItem;
             }
             else
             {
@@ -134,7 +134,7 @@ namespace ResourceLoading
                 foreach (string ScriptName in scripts)
                 {
                     commonItem.StringableCharacters.Add(
-                        new Framework.source.scripts.world.ItemCharacter<string>()
+                        new ItemCharacter<string>()
                         {
                             CharacterName = "ScriptName",
                             CharacterValue = ScriptName
@@ -142,6 +142,87 @@ namespace ResourceLoading
                 }
             }
 
+        }
+
+        private void ItemBitMap_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                ItemBitMap.Image = Image.FromFile(openFileDialog.FileName);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream(ItemsManager.ResourceFileSave, FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, addingItems);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (LastIndex == null)
+                return;
+            index--;
+            CurrentItem = LastIndex;
+
+            //ScriptsNamesTextBox.Text = CurrentItem.StringableCharacters.SingleOrDefault(x => x.CharacterName == "sctipt").CharacterValue;
+
+            AgilityTextBox.Text = CurrentItem.StringableCharacters.SingleOrDefault
+                (x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.Agility]).CharacterValue;
+
+            DamageTextBox.Text = CurrentItem.StringableCharacters.SingleOrDefault
+                (x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.Damage]).CharacterValue;
+
+            DarkMTextBox.Text = CurrentItem.StringableCharacters.SingleOrDefault
+                (x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.DarkM]).CharacterValue;
+
+            FireMTextBox.Text = CurrentItem.StringableCharacters.SingleOrDefault
+                (x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.FireM]).CharacterValue;
+
+            ForceTextBox.Text = CurrentItem.StringableCharacters.SingleOrDefault
+                (x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.Force]).CharacterValue;
+
+            IceMTextBox.Text = CurrentItem.StringableCharacters.SingleOrDefault
+                (x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.IceM]).CharacterValue;
+
+            IntellectTextBox.Text = CurrentItem.StringableCharacters.SingleOrDefault
+                (x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.Intellect]).CharacterValue;
+
+            ItemNameTextBox.Text = CurrentItem.ItemName.Name;
+
+            LigthMTextBox.Text = CurrentItem.StringableCharacters.SingleOrDefault
+                (x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.LigthM]).CharacterValue;
+
+            NatureMTextBox.Text = CurrentItem.StringableCharacters.SingleOrDefault
+                (x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.NatureM]).CharacterValue;
+
+            NeedLevelTextBox.Text = "0";
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (CurrentItem == null)
+                return;
+            index++;
+
+            ScriptsNamesTextBox.Text = "";
+            AgilityTextBox.Text = "";
+            DamageTextBox.Text = "";
+            DarkMTextBox.Text = "";
+            FireMTextBox.Text = "";
+            ForceTextBox.Text = "";
+            IceMTextBox.Text = "";
+            IntellectTextBox.Text = "";
+            ItemNameTextBox.Text = "";
+            LigthMTextBox.Text = "";
+            NatureMTextBox.Text = "";
+            NeedLevelTextBox.Text = "";
+            
+            LastIndex = CurrentItem;
         }
     }
 }

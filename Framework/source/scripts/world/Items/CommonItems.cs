@@ -12,6 +12,5 @@ namespace Framework.source.scripts.world.Items
         public CommonItems()
         {
         }
-
     }
 }

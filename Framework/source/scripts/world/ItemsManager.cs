@@ -22,6 +22,5 @@ namespace Framework.source.scripts.world
                 ItemEntities = (List<ItemEntity>)formatter.Deserialize(fs);
             }
         }
-
     }
 }

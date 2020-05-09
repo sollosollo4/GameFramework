@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Framework.Controls;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -29,6 +30,18 @@ namespace Framework.source
         {
             ItemsManager = new scripts.world.ItemsManager();
             return this;
+        }
+
+        public List<ItemBox> GetAllItemBoxes()
+        {
+            List<ItemBox> ItemBoxs = new List<ItemBox>();
+            int i = 0;
+            foreach(var item in ItemsManager.ItemEntities)
+            {
+                ItemBoxs.Add(new ItemBox(item) { TabIndex = i } );
+                i++;
+            }
+            return ItemBoxs;
         }
     }
 }
