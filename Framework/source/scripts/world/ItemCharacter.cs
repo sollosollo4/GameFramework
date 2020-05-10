@@ -18,8 +18,10 @@ namespace Framework.source.scripts.world
             "IceM",
             "NatureM",
             "LigthM",
-            "DarkM"
+            "DarkM",
+            "EquipType"
         };
+
         public enum CharacterNamesT : int
         {
             DamageType,
@@ -31,8 +33,23 @@ namespace Framework.source.scripts.world
             IceM,
             NatureM,
             LigthM,
-            DarkM
+            DarkM,
+            EquipType
         }
+
+        public static readonly string[] EquipTypeValues = new string[]
+        {
+            "Head",
+            "Burclet",
+            "Plate",
+            "Buwer",
+            "Hand",
+            "Jeans",
+            "Shoe",
+            "Difficulty",
+            "MainWeapon",
+            "SecondWeapon"
+        };
 
         public string CharacterName { get; set; }
         public T CharacterValue { get; set; }

@@ -13,13 +13,21 @@ namespace Framework.source.scripts.world
         public const string ResourceFileSave = @"..\..\..\..\MyGameTest\MyGameTest\bin\Debug\items.rsc";
 
         public List<ItemEntity> ItemEntities;
-       
-        public ItemsManager()
+
+        public MainScript mainScript;
+        public ItemsManager(MainScript mainScript)
         {
+            this.mainScript = mainScript;
+
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream(ResourceFileSave, FileMode.Open))
             {
                 ItemEntities = (List<ItemEntity>)formatter.Deserialize(fs);
+            }
+
+            //set mainScript
+            foreach(var itm in ItemEntities) {
+                itm.MainScript = mainScript;
             }
         }
     }

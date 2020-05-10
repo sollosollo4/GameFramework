@@ -74,9 +74,20 @@ namespace Framework.Controls
                 return;
         }
 
+        internal void RemoveAllEvents()
+        {
+            this.MouseDown -= ItemBox_MouseDown;
+            Controls.OfType<Panel>().First().MouseDown -= ItemIcon_MouseDown;
+
+            this.DragEnter -= ItemBox_DragEnter;
+            this.DragDrop -= ItemBox_DragDrop;
+            Controls.OfType<Panel>().First().DragEnter -= ItemBox_DragEnter;
+            Controls.OfType<Panel>().First().DragDrop -= ItemIcon_DragDrop;
+        }
+
         private void UseItemBoxContextStrip(object sender, EventArgs e)
         {
-
+            GetItemEntity.ItemEquip(GetItemEntity, this);
         }
 
         private void ItemIcon_DragDrop(object sender, DragEventArgs e)

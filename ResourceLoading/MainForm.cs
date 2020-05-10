@@ -123,6 +123,13 @@ namespace ResourceLoading
                         CharacterValue = Convert.ToInt32(DarkMTextBox.Text)
                     });
 
+                commonItem.StringableCharacters.Add(
+                    new ItemCharacter<string>()
+                    {
+                        CharacterName = "EquipType",
+                        CharacterValue = ItemEquip.SelectedItem.ToString()
+                    });
+
                 addingItems.Add(commonItem);
                 CurrentItem = commonItem;
             }

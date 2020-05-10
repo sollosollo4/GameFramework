@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Framework.Controls;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Framework.source.scripts.world
 {
@@ -25,9 +27,18 @@ namespace Framework.source.scripts.world
             StringableCharacters = new List<ItemCharacter<string>>();
         }
 
+        [NonSerialized]
+        public MainScript MainScript;
+
         public virtual ItemName ItemName { get; set; }
         public virtual List<ItemCharacter<int>> IntableCharacters { get; set; }
         public virtual List<ItemCharacter<string>> StringableCharacters { get; set; }
         public virtual Image ItemIcon { get; set; }
+
+        public virtual void ItemEquip(ItemEntity item, ItemBox sender)
+        {
+            MainScript.SetItem(item, sender);
+            MainScript.Player.SetItem(item);
+        }
     }
 }

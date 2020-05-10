@@ -75,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="source\scripts\auth\Player.cs" />
     <Compile Include="source\scripts\Graphic.cs" />
     <Compile Include="source\scripts\MainScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,7 +90,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="source\scripts\auth\" />
     <Folder Include="source\scripts\forms\" />
     <Folder Include="source\scripts\world\ItemsScripts\" />
   </ItemGroup>

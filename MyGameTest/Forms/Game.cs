@@ -40,7 +40,15 @@ namespace GameFramework.Forms
             KeyPreview = true;
             WindowState = FormWindowState.Normal;
             WindowState = FormWindowState.Maximized;
-            
+
+            script.BackPackInterfacePanel = BackPackInterface;
+
+            script.HeroInterfacePanel = MainHeroInterface;
+
+            script.AFILabels = new Label[3];
+            script.AFILabels[0] = ForceLabel;
+            script.AFILabels[1] = AgilityLabel;
+            script.AFILabels[2] = IntellectLabel;
 
             Graphic g = new Graphic();
             g.SetAllPictureBoxMouseEvents(MainInterface.Controls, Color.FromArgb(35, 100, 20, 100), Color.FromArgb(35, 100, 20, 100));
@@ -49,8 +57,6 @@ namespace GameFramework.Forms
         private void Game_Load(object sender, EventArgs e)
         {
             BackPackInterface.Controls.AddRange(script.GetAllItemBoxes().ToArray());
-
-            MainHeroInterface.Controls.Add(new ItemBox(script.GetAllItemBoxes()[0].GetItemEntity) { Margin = new Padding(0) }, 0, 2);
         }
 
         private void Game_KeyDown(object sender, KeyEventArgs e)

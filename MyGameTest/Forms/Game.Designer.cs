@@ -296,7 +296,6 @@
             this.BackGround.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BackGround.Controls.Add(this.MainHeroInterface);
             this.BackGround.Controls.Add(this.MainHeroInterfaceBackground);
-            this.BackGround.Controls.Add(this.pPlateSetup);
             this.BackGround.Controls.Add(this.pictureBox1);
             this.BackGround.Controls.Add(this.BackPackInterface);
             this.BackGround.Controls.Add(this.MainInterface);
@@ -318,6 +317,7 @@
             this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.MainHeroInterface.Controls.Add(this.pHeadSetup, 0, 0);
             this.MainHeroInterface.Controls.Add(this.pBurcletSetup, 0, 1);
+            this.MainHeroInterface.Controls.Add(this.pPlateSetup, 0, 2);
             this.MainHeroInterface.Controls.Add(this.pBuwerSetup, 0, 3);
             this.MainHeroInterface.Controls.Add(this.pHandSetup, 5, 0);
             this.MainHeroInterface.Controls.Add(this.pJeansSetup, 5, 1);
@@ -359,10 +359,11 @@
             // pHeadSetup
             // 
             this.pHeadSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pHeadSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pHeadSetup.Image = ((System.Drawing.Image)(resources.GetObject("pHeadSetup.Image")));
             this.pHeadSetup.Location = new System.Drawing.Point(3, 3);
             this.pHeadSetup.Name = "pHeadSetup";
-            this.pHeadSetup.Size = new System.Drawing.Size(48, 48);
+            this.pHeadSetup.Size = new System.Drawing.Size(54, 54);
             this.pHeadSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pHeadSetup.TabIndex = 1;
             this.pHeadSetup.TabStop = false;
@@ -370,10 +371,11 @@
             // pBurcletSetup
             // 
             this.pBurcletSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pBurcletSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pBurcletSetup.Image = ((System.Drawing.Image)(resources.GetObject("pBurcletSetup.Image")));
             this.pBurcletSetup.Location = new System.Drawing.Point(3, 63);
             this.pBurcletSetup.Name = "pBurcletSetup";
-            this.pBurcletSetup.Size = new System.Drawing.Size(48, 48);
+            this.pBurcletSetup.Size = new System.Drawing.Size(54, 54);
             this.pBurcletSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBurcletSetup.TabIndex = 2;
             this.pBurcletSetup.TabStop = false;
@@ -381,10 +383,11 @@
             // pPlateSetup
             // 
             this.pPlateSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pPlateSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pPlateSetup.Image = ((System.Drawing.Image)(resources.GetObject("pPlateSetup.Image")));
-            this.pPlateSetup.Location = new System.Drawing.Point(525, 208);
+            this.pPlateSetup.Location = new System.Drawing.Point(3, 123);
             this.pPlateSetup.Name = "pPlateSetup";
-            this.pPlateSetup.Size = new System.Drawing.Size(48, 48);
+            this.pPlateSetup.Size = new System.Drawing.Size(54, 54);
             this.pPlateSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pPlateSetup.TabIndex = 6;
             this.pPlateSetup.TabStop = false;
@@ -392,10 +395,11 @@
             // pBuwerSetup
             // 
             this.pBuwerSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pBuwerSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pBuwerSetup.Image = ((System.Drawing.Image)(resources.GetObject("pBuwerSetup.Image")));
             this.pBuwerSetup.Location = new System.Drawing.Point(3, 183);
             this.pBuwerSetup.Name = "pBuwerSetup";
-            this.pBuwerSetup.Size = new System.Drawing.Size(48, 48);
+            this.pBuwerSetup.Size = new System.Drawing.Size(54, 54);
             this.pBuwerSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBuwerSetup.TabIndex = 8;
             this.pBuwerSetup.TabStop = false;
@@ -403,10 +407,11 @@
             // pHandSetup
             // 
             this.pHandSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pHandSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pHandSetup.Image = ((System.Drawing.Image)(resources.GetObject("pHandSetup.Image")));
             this.pHandSetup.Location = new System.Drawing.Point(323, 3);
             this.pHandSetup.Name = "pHandSetup";
-            this.pHandSetup.Size = new System.Drawing.Size(48, 48);
+            this.pHandSetup.Size = new System.Drawing.Size(54, 54);
             this.pHandSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pHandSetup.TabIndex = 3;
             this.pHandSetup.TabStop = false;
@@ -414,10 +419,11 @@
             // pJeansSetup
             // 
             this.pJeansSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pJeansSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pJeansSetup.Image = ((System.Drawing.Image)(resources.GetObject("pJeansSetup.Image")));
             this.pJeansSetup.Location = new System.Drawing.Point(323, 63);
             this.pJeansSetup.Name = "pJeansSetup";
-            this.pJeansSetup.Size = new System.Drawing.Size(48, 48);
+            this.pJeansSetup.Size = new System.Drawing.Size(54, 54);
             this.pJeansSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pJeansSetup.TabIndex = 4;
             this.pJeansSetup.TabStop = false;
@@ -425,10 +431,11 @@
             // pShoesSetup
             // 
             this.pShoesSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pShoesSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pShoesSetup.Image = ((System.Drawing.Image)(resources.GetObject("pShoesSetup.Image")));
             this.pShoesSetup.Location = new System.Drawing.Point(323, 123);
             this.pShoesSetup.Name = "pShoesSetup";
-            this.pShoesSetup.Size = new System.Drawing.Size(48, 48);
+            this.pShoesSetup.Size = new System.Drawing.Size(54, 54);
             this.pShoesSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pShoesSetup.TabIndex = 5;
             this.pShoesSetup.TabStop = false;
@@ -436,10 +443,11 @@
             // pDifficultySetup
             // 
             this.pDifficultySetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pDifficultySetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pDifficultySetup.Image = ((System.Drawing.Image)(resources.GetObject("pDifficultySetup.Image")));
             this.pDifficultySetup.Location = new System.Drawing.Point(323, 183);
             this.pDifficultySetup.Name = "pDifficultySetup";
-            this.pDifficultySetup.Size = new System.Drawing.Size(48, 48);
+            this.pDifficultySetup.Size = new System.Drawing.Size(54, 54);
             this.pDifficultySetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pDifficultySetup.TabIndex = 7;
             this.pDifficultySetup.TabStop = false;
@@ -514,7 +522,7 @@
             this.FireLabel.Name = "FireLabel";
             this.FireLabel.Size = new System.Drawing.Size(79, 12);
             this.FireLabel.TabIndex = 0;
-            this.FireLabel.Text = "Char1";
+            this.FireLabel.Text = "3";
             this.FireLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox15
@@ -559,7 +567,7 @@
             this.IceLabel.Name = "IceLabel";
             this.IceLabel.Size = new System.Drawing.Size(79, 12);
             this.IceLabel.TabIndex = 0;
-            this.IceLabel.Text = "Char2";
+            this.IceLabel.Text = "3";
             this.IceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NatureLabel
@@ -571,7 +579,7 @@
             this.NatureLabel.Name = "NatureLabel";
             this.NatureLabel.Size = new System.Drawing.Size(79, 12);
             this.NatureLabel.TabIndex = 0;
-            this.NatureLabel.Text = "Char3";
+            this.NatureLabel.Text = "3";
             this.NatureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LigthLabel
@@ -583,7 +591,7 @@
             this.LigthLabel.Name = "LigthLabel";
             this.LigthLabel.Size = new System.Drawing.Size(79, 12);
             this.LigthLabel.TabIndex = 0;
-            this.LigthLabel.Text = "Char4";
+            this.LigthLabel.Text = "3";
             this.LigthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DarkLabel
@@ -595,7 +603,7 @@
             this.DarkLabel.Name = "DarkLabel";
             this.DarkLabel.Size = new System.Drawing.Size(79, 15);
             this.DarkLabel.TabIndex = 0;
-            this.DarkLabel.Text = "Char5";
+            this.DarkLabel.Text = "3";
             this.DarkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainCharactersTablePanel
@@ -660,7 +668,7 @@
             this.AgilityLabel.Name = "AgilityLabel";
             this.AgilityLabel.Size = new System.Drawing.Size(52, 22);
             this.AgilityLabel.TabIndex = 0;
-            this.AgilityLabel.Text = "Agility";
+            this.AgilityLabel.Text = "3";
             this.AgilityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // IntellectLabel
@@ -672,7 +680,7 @@
             this.IntellectLabel.Name = "IntellectLabel";
             this.IntellectLabel.Size = new System.Drawing.Size(52, 22);
             this.IntellectLabel.TabIndex = 0;
-            this.IntellectLabel.Text = "Intellect";
+            this.IntellectLabel.Text = "3";
             this.IntellectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ForceLabel
@@ -684,16 +692,17 @@
             this.ForceLabel.Name = "ForceLabel";
             this.ForceLabel.Size = new System.Drawing.Size(52, 22);
             this.ForceLabel.TabIndex = 0;
-            this.ForceLabel.Text = "Force";
+            this.ForceLabel.Text = "3";
             this.ForceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pMainWeaponSetup
             // 
             this.pMainWeaponSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pMainWeaponSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMainWeaponSetup.Image = ((System.Drawing.Image)(resources.GetObject("pMainWeaponSetup.Image")));
             this.pMainWeaponSetup.Location = new System.Drawing.Point(3, 243);
             this.pMainWeaponSetup.Name = "pMainWeaponSetup";
-            this.pMainWeaponSetup.Size = new System.Drawing.Size(48, 48);
+            this.pMainWeaponSetup.Size = new System.Drawing.Size(54, 54);
             this.pMainWeaponSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pMainWeaponSetup.TabIndex = 10;
             this.pMainWeaponSetup.TabStop = false;
@@ -701,10 +710,11 @@
             // pSecndWeaponSetup
             // 
             this.pSecndWeaponSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pSecndWeaponSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pSecndWeaponSetup.Image = ((System.Drawing.Image)(resources.GetObject("pSecndWeaponSetup.Image")));
             this.pSecndWeaponSetup.Location = new System.Drawing.Point(323, 243);
             this.pSecndWeaponSetup.Name = "pSecndWeaponSetup";
-            this.pSecndWeaponSetup.Size = new System.Drawing.Size(48, 48);
+            this.pSecndWeaponSetup.Size = new System.Drawing.Size(54, 54);
             this.pSecndWeaponSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pSecndWeaponSetup.TabIndex = 9;
             this.pSecndWeaponSetup.TabStop = false;

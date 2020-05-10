@@ -1,18 +1,28 @@
 ﻿using Framework.Controls;
+using Framework.source.scripts.auth;
+using Framework.source.scripts.world;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.Control;
 
 namespace Framework.source
 {
     public class MainScript
     {
-        Graphic graphic;
-        scripts.world.ItemsManager ItemsManager;
+        public Graphic graphic;
+        public Player Player;
+        public ItemsManager ItemsManager;
+
+        public EventHandler eventHandler_HeroCharacteristic_Update;
+        public TableLayoutPanel HeroInterfacePanel;
+        public FlowLayoutPanel BackPackInterfacePanel;
+
+        public Label[] AFILabels;
 
         public MainScript()
         {
@@ -28,7 +38,8 @@ namespace Framework.source
 
         public MainScript LoadAllScripts()
         {
-            ItemsManager = new scripts.world.ItemsManager();
+            ItemsManager = new ItemsManager(this);
+            Player = new Player(this);
             return this;
         }
 
@@ -42,6 +53,144 @@ namespace Framework.source
                 i++;
             }
             return ItemBoxs;
+        }
+
+        public void SetItem(ItemEntity item, ItemBox sender)
+        {
+            var cellIndex = item.StringableCharacters.FirstOrDefault( x=> x.CharacterName == ItemCharacter<string>.CharacterNames[(int)ItemCharacter<string>.CharacterNamesT.EquipType]).CharacterValue;
+
+            sender.Margin = new Padding(0);
+            ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
+            contextMenuStrip.Items.Add("Снять", null, UseItemBoxContextStrip);
+
+            sender.ContextMenuStrip = contextMenuStrip;
+            sender.Controls.OfType<Panel>().First().ContextMenuStrip = contextMenuStrip;
+
+            sender.MouseDown += Sender_MouseDown;
+            sender.Controls.OfType<Panel>().First().MouseDown += MainScript_MouseDown;
+
+            sender.RemoveAllEvents();
+
+            var control = HeroInterfacePanel.GetControlFromPosition(getColumn(cellIndex), getRow(cellIndex));
+
+            if (control is PictureBox)
+            {
+                HeroInterfacePanel.Controls.Remove(control);
+                BackPackInterfacePanel.Controls.Remove(sender);
+
+                HeroInterfacePanel.Controls.Add(sender, getColumn(cellIndex), getRow(cellIndex));
+            }
+            else if(control is ItemBox)
+            {            
+                var itemBox = (ItemBox)control;
+                ItemBox newItemBox = new ItemBox(itemBox.GetItemEntity);
+                Player.DesetItem(itemBox.GetItemEntity);
+
+                HeroInterfacePanel.Controls.Remove(control);
+                HeroInterfacePanel.Controls.Add(sender, getColumn(cellIndex), getRow(cellIndex));
+
+                
+                BackPackInterfacePanel.Controls.Add(newItemBox);
+            }
+            else if(control is null)
+            {
+                HeroInterfacePanel.Controls.Remove(control);
+                BackPackInterfacePanel.Controls.Remove(sender);
+
+                HeroInterfacePanel.Controls.Add(sender, getColumn(cellIndex), getRow(cellIndex));
+            }
+        }
+
+        private void MainScript_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                var newTag = sender as Panel;
+                newTag.ContextMenuStrip.Tag = newTag.Parent;
+            }
+        }
+
+        private void Sender_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                var tags = sender as ItemBox;
+                tags.ContextMenuStrip.Tag = tags;
+            }
+        }
+
+        private void UseItemBoxContextStrip(object sender, EventArgs e)
+        {
+            var panel = (ToolStripItem)sender;
+            var stripmenu = panel.GetCurrentParent();
+            var itembox = (ItemBox)stripmenu.Tag;
+            var cellIndex = itembox.GetItemEntity.StringableCharacters.FirstOrDefault(x => x.CharacterName == ItemCharacter<string>.CharacterNames[(int)ItemCharacter<string>.CharacterNamesT.EquipType]).CharacterValue;
+
+            Player.DesetItem(itembox.GetItemEntity);
+
+            var control = HeroInterfacePanel.GetControlFromPosition(getColumn(cellIndex), getRow(cellIndex));
+            HeroInterfacePanel.Controls.Remove(control);
+
+            ItemBox newItemBox = new ItemBox(itembox.GetItemEntity);
+            BackPackInterfacePanel.Controls.Add(newItemBox);
+        }
+
+        private int getRow(string cellIndex)
+        {
+            switch(cellIndex)
+            {
+                case "Head":
+                    return 0;
+                case "Burclet":
+                    return 1;
+                case "Plate":
+                    return 2;
+                case "Buwer":
+                    return 3;
+                case "Hand":
+                    return 0;
+                case "Jeans":
+                    return 1;
+                case "Shoe":
+                    return 2;
+                case "Difficulty":
+                    return 3;
+                case "MainWeapon":
+                    return 4;
+                case "SecondWeapon":
+                    return 4;
+                default:
+                    return -1;
+            }
+        }
+
+        private int getColumn(string cellIndex)
+        {
+            switch (cellIndex)
+            {
+                case "Head":
+                    return 0;
+                case "Burclet":
+                    return 0;
+                case "Plate":
+                    return 0;
+                case "Buwer":
+                    return 0;
+                case "Hand":
+                    return 5;
+                case "Jeans":
+                    return 5;
+                case "Shoe":
+                    return 5;
+                case "Difficulty":
+                    return 5;
+                case "MainWeapon":
+                    return 0;
+                case "SecondWeapon":
+                    return 0;
+                default:
+                    return -1;
+            }
         }
     }
 }
