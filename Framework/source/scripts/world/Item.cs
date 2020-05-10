@@ -11,6 +11,7 @@ namespace Framework.source.scripts.world
 {
     public interface Item
     {
+        int ID { get; set; }
         ItemName ItemName { get; set; }
         List<ItemCharacter<int>> IntableCharacters { get; set; }
         List<ItemCharacter<string>> StringableCharacters { get; set; }
@@ -34,6 +35,8 @@ namespace Framework.source.scripts.world
         public virtual List<ItemCharacter<int>> IntableCharacters { get; set; }
         public virtual List<ItemCharacter<string>> StringableCharacters { get; set; }
         public virtual Image ItemIcon { get; set; }
+
+        public abstract int ID { get; set; }
 
         public virtual void ItemEquip(ItemEntity item, ItemBox sender)
         {

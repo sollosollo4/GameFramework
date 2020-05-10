@@ -19,6 +19,8 @@ namespace Framework.Controls
         ContextMenuStrip contextMenuStrip;
         public Panel IconPanel;
 
+        public bool isVisibleChange;
+
         public ItemBox(ItemEntity item)
         {
             GetItemEntity = item;
@@ -57,6 +59,35 @@ namespace Framework.Controls
             contextMenuStrip.Items.Add("Удалить", null, DeleteItemBoxContextStrip);
             this.ContextMenuStrip = contextMenuStrip;
             
+            MultiToolTip = new MultiToolTip(item);
+        }
+
+        public ItemBox(ItemEntity item, bool trueFl)
+        {
+            GetItemEntity = item;
+            isVisibleChange = trueFl;
+            InitializeComponent();
+            
+            Size = new Size(60, 60);
+            Location = new Point(0, 0);
+
+            BackColor = item.ItemName.QualityColor;
+
+            Panel ItemIcon = new Panel()
+            {
+                Location = new Point(3, 3),
+                Size = new Size(54, 54),
+                BackgroundImage = item.ItemIcon,
+                BackgroundImageLayout = ImageLayout.Stretch,
+                BackColor = Color.Transparent
+            };
+
+            ItemIcon.MouseEnter += ItemIcon_MouseEnter;
+            ItemIcon.MouseLeave += ItemIcon_MouseLeave;
+            
+            Controls.Add(ItemIcon);
+            IconPanel = ItemIcon;
+
             MultiToolTip = new MultiToolTip(item);
         }
 
@@ -212,9 +243,12 @@ namespace Framework.Controls
             var panel = (Panel)sender;
             panel.Paint += ItemIcon_Paint;
             panel.Refresh();
-            
 
-            Point newPoint = new Point(this.Location.X + this.Size.Width - 15 + Parent.Location.X, this.Location.Y + this.Size.Height - 195 + Parent.Location.Y);
+            Point newPoint;
+            if (!isVisibleChange)
+                newPoint = new Point(this.Location.X + this.Size.Width - 15 + Parent.Location.X, this.Location.Y + this.Size.Height - 195 + Parent.Location.Y);
+            else
+                newPoint = new Point(this.Location.X + this.Size.Width - 615 + Parent.Location.X, this.Location.Y + this.Size.Height - 40 + Parent.Location.Y);
             MultiToolTip.Location = newPoint;
             MultiToolTip.Show();
         }

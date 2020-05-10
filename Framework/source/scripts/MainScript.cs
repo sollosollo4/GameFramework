@@ -23,6 +23,8 @@ namespace Framework.source
         public FlowLayoutPanel BackPackInterfacePanel;
 
         public Label[] AFILabels;
+        public Label[] AspectsLabel;
+        public Label[] DmgInfolabel;
 
         public MainScript()
         {
@@ -63,8 +65,9 @@ namespace Framework.source
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
             contextMenuStrip.Items.Add("Снять", null, UseItemBoxContextStrip);
             
-            sender.IconPanel.ContextMenuStrip = contextMenuStrip;
+            sender.ContextMenuStrip = contextMenuStrip;
             sender.IconPanel.MouseDown += ItemIcon_MouseDown;
+            sender.MouseDown += Sender_MouseDown;
 
             var control = HeroInterfacePanel.GetControlFromPosition(getColumn(cellIndex), getRow(cellIndex));
 
@@ -93,14 +96,29 @@ namespace Framework.source
 
                 HeroInterfacePanel.Controls.Add(sender, getColumn(cellIndex), getRow(cellIndex));
             }
-        }        
+        }
+
+        private void Sender_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Right)
+            {
+                if (sender is ItemBox)
+                {
+                    var newTag = sender as ItemBox;
+                    newTag.ContextMenuStrip.Tag = newTag;
+                }
+            }
+        }
 
         private void ItemIcon_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
-                var newTag = sender as Panel;
-                newTag.ContextMenuStrip.Tag = newTag.Parent;
+                if(sender is Panel)
+                {
+                    var newTag = sender as Panel;
+                    newTag.Parent.ContextMenuStrip.Tag = newTag.Parent;
+                }
             }
         }
 
@@ -109,6 +127,12 @@ namespace Framework.source
             var panel = (ToolStripItem)sender;
             var stripmenu = panel.GetCurrentParent();
             var itembox = (ItemBox)stripmenu.Tag;
+            
+            if(itembox == null)
+            {
+                var panelka = (ItemBox)stripmenu.Parent.ContextMenuStrip.Tag;
+                itembox = panelka;
+            }
             var cellIndex = itembox.GetItemEntity.StringableCharacters.FirstOrDefault(x => x.CharacterName == ItemCharacter<string>.CharacterNames[(int)ItemCharacter<string>.CharacterNamesT.EquipType]).CharacterValue;
 
             Player.DesetItem(itembox.GetItemEntity);
@@ -146,7 +170,7 @@ namespace Framework.source
                     return 1;
                 case "Shoe":
                     return 2;
-                case "Difficulty":
+                case "Diffuculty":
                     return 3;
                 case "MainWeapon":
                     return 4;
@@ -175,7 +199,7 @@ namespace Framework.source
                     return 5;
                 case "Shoe":
                     return 5;
-                case "Difficulty":
+                case "Diffuculty":
                     return 5;
                 case "MainWeapon":
                     return 0;
@@ -204,7 +228,7 @@ namespace Framework.source
                     return Properties.Resources.ItemJeans;
                 case "Shoe":
                     return Properties.Resources.ItemShoe;
-                case "Difficulty":
+                case "Diffuculty":
                     return Properties.Resources.ItemDifficulty;
                 case "MainWeapon":
                     return Properties.Resources.ItemWeaponMain;

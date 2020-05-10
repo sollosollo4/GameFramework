@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Framework.source.scripts.world.Items;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,7 +13,10 @@ namespace Framework.source.scripts.world
     {
         public const string ResourceFileSave = @"..\..\..\..\MyGameTest\MyGameTest\bin\Debug\items.rsc";
 
+        public const string ResourceFile = @"..\..\..\..\MyGameTest\MyGameTest\bin\Debug\resource.rsc";
+
         public List<ItemEntity> ItemEntities;
+        public List<ResourceItems> ResourceItems;
 
         public MainScript mainScript;
         public ItemsManager(MainScript mainScript)
@@ -25,7 +29,11 @@ namespace Framework.source.scripts.world
                 ItemEntities = (List<ItemEntity>)formatter.Deserialize(fs);
             }
 
-            //set mainScript
+            //using (FileStream fs = new FileStream(ResourceFile, FileMode.Open))
+            //{
+            //    ResourceItems = (List<ResourceItems>)formatter.Deserialize(fs);
+            //}
+            
             foreach(var itm in ItemEntities) {
                 itm.MainScript = mainScript;
             }

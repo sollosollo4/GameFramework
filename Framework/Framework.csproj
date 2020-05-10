@@ -83,7 +83,9 @@
     <Compile Include="source\scripts\world\ItemCharacter.cs" />
     <Compile Include="source\scripts\world\ItemName.cs" />
     <Compile Include="source\scripts\world\ItemsManager.cs" />
+    <Compile Include="source\scripts\world\ItemsScripts\IStackable.cs" />
     <Compile Include="source\scripts\world\Items\CommonItems.cs" />
+    <Compile Include="source\scripts\world\Items\ResourceItems.cs" />
     <Compile Include="source\scripts\world\Items\ScriptableItems.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,7 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="source\scripts\forms\" />
-    <Folder Include="source\scripts\world\ItemsScripts\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controls\MultiToolTip.resx">

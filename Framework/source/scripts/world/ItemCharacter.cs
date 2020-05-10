@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Framework.source.scripts.world.Items;
+using Framework.source.scripts.world.ItemsScripts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -63,6 +65,31 @@ namespace Framework.source.scripts.world
         public static ItemCharacter<T> GetItemCharacter(string name, T value)
         {
             return new ItemCharacter<T>() { CharacterName = name, CharacterValue = value };
+        }
+    }
+
+    [Serializable]
+    public class ItemCharacter : IStackable
+    {
+        public static readonly string[] ItemCharacterStackable = new string[]
+        {
+            "MaxCount",
+        };
+
+        public enum ItemCharacterStackableT : int
+        {
+            MaxCount,
+        }
+
+        public int Count { get => ItemEntity.Count; set => ItemEntity.Count = value; }
+        public int MaxCount { get => ItemEntity.MaxCount; set => ItemEntity.MaxCount = value; }
+
+        public ResourceItems ItemEntity;
+
+        public ItemCharacter(ResourceItems item, string name, string value)
+        {
+            ItemEntity = item;
+            ItemEntity.StringableCharacters.Add(new ItemCharacter<string>() { CharacterName = name, CharacterValue = value });
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Framework.source.scripts.world;
+using Framework.source.scripts.world.Items;
 
 namespace Framework.source.scripts.auth
 {
@@ -14,7 +15,8 @@ namespace Framework.source.scripts.auth
         {
             public static readonly string[] CharacterNames = new string[]
             {
-                "Damage",
+                "PhysDamage",
+                "MagDamage",
                 "AgilityS",
                 "ForceS",
                 "IntellectS",
@@ -22,12 +24,14 @@ namespace Framework.source.scripts.auth
                 "IceSM",
                 "NatureSM",
                 "LigthSM",
-                "DarkSM"
+                "DarkSM",
+                "DmgType"
             };
 
             public enum CharacterNamesT : int
             {
-                Damage,
+                PhysDamage,
+                MagDamage,
                 Agility,
                 Force,
                 Intellect,
@@ -72,7 +76,7 @@ namespace Framework.source.scripts.auth
             }
         }
 
-        internal void SetItem(ItemEntity item)
+        public void SetItem(ItemEntity item)
         {
             var AddDamage = item.IntableCharacters.FirstOrDefault(
                 x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.Damage]).CharacterValue;
@@ -103,9 +107,14 @@ namespace Framework.source.scripts.auth
                 x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.DarkM]).CharacterValue;
 
 
-            PlayerCharacteristics.FirstOrDefault(
-                x => x.CharacterName == PlayerCharacteristic.CharacterNames[(int)PlayerCharacteristic.CharacterNamesT.Damage])
-                .CharacterValue += AddDamage;
+            if(item.IntableCharacters.FirstOrDefault( x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.DamageType]).CharacterValue == 0)
+                PlayerCharacteristics.FirstOrDefault(
+                    x => x.CharacterName == PlayerCharacteristic.CharacterNames[(int)PlayerCharacteristic.CharacterNamesT.PhysDamage])
+                    .CharacterValue += AddDamage;
+            else
+                PlayerCharacteristics.FirstOrDefault(
+                    x => x.CharacterName == PlayerCharacteristic.CharacterNames[(int)PlayerCharacteristic.CharacterNamesT.MagDamage])
+                    .CharacterValue += AddDamage;
 
             PlayerCharacteristics.FirstOrDefault(
                 x => x.CharacterName == PlayerCharacteristic.CharacterNames[(int)PlayerCharacteristic.CharacterNamesT.Agility])
@@ -141,7 +150,7 @@ namespace Framework.source.scripts.auth
                 .CharacterValue += AddDarkM;
         }
 
-        internal void DesetItem(ItemEntity item)
+        public void DesetItem(ItemEntity item)
         {
             var AddDamage = item.IntableCharacters.FirstOrDefault(
                  x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.Damage]).CharacterValue;
@@ -171,10 +180,14 @@ namespace Framework.source.scripts.auth
             var AddDarkM = item.IntableCharacters.FirstOrDefault(
                 x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.DarkM]).CharacterValue;
 
-
-            PlayerCharacteristics.FirstOrDefault(
-                x => x.CharacterName == PlayerCharacteristic.CharacterNames[(int)PlayerCharacteristic.CharacterNamesT.Damage])
-                .CharacterValue -= AddDamage;
+            if (item.IntableCharacters.FirstOrDefault(x => x.CharacterName == ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.DamageType]).CharacterValue == 0)
+                PlayerCharacteristics.FirstOrDefault(
+                    x => x.CharacterName == PlayerCharacteristic.CharacterNames[(int)PlayerCharacteristic.CharacterNamesT.PhysDamage])
+                    .CharacterValue -= AddDamage;
+            else
+                PlayerCharacteristics.FirstOrDefault(
+                    x => x.CharacterName == PlayerCharacteristic.CharacterNames[(int)PlayerCharacteristic.CharacterNamesT.MagDamage])
+                    .CharacterValue -= AddDamage;
 
             PlayerCharacteristics.FirstOrDefault(
                 x => x.CharacterName == PlayerCharacteristic.CharacterNames[(int)PlayerCharacteristic.CharacterNamesT.Agility])
@@ -211,6 +224,9 @@ namespace Framework.source.scripts.auth
         }
 
         public MainScript mainScript;
+        public List<ItemEntity> BackPack;
+        public List<ResourceItems> Inventory;
+
         private List<PlayerCharacteristic> PlayerCharacteristics;
 
         public Player(MainScript mainScript)
@@ -227,7 +243,9 @@ namespace Framework.source.scripts.auth
 
         private void SetDefaultPlayerCharacteristics()
         {
-            PlayerCharacteristics.Add(new PlayerCharacteristic("Damage", 21));
+            PlayerCharacteristics.Add(new PlayerCharacteristic("PhysDamage", 21));
+            PlayerCharacteristics.Add(new PlayerCharacteristic("MagDamage", 21));
+
             PlayerCharacteristics.Add(new PlayerCharacteristic("AgilityS", 3));
             PlayerCharacteristics.Add(new PlayerCharacteristic("ForceS", 3));
             PlayerCharacteristics.Add(new PlayerCharacteristic("IntellectS", 3));
@@ -243,9 +261,43 @@ namespace Framework.source.scripts.auth
         {
             var actuallySender = (PlayerCharacteristic)sender;
             var index = getCurrectlyCode(actuallySender.CharacterName);
-            if (index < 0)
-                return;
-            mainScript.AFILabels[index].Text = actuallySender.CharacterValue.ToString();
+            var indexAspect = getCurrectlyAspectCode(actuallySender.CharacterName);
+
+            if (index != -1)
+                mainScript.AFILabels[index].Text = actuallySender.CharacterValue.ToString();
+
+            if (indexAspect != -1)
+                mainScript.AspectsLabel[indexAspect].Text = actuallySender.CharacterValue.ToString();
+            
+            if(actuallySender.CharacterName == PlayerCharacteristic.CharacterNames[(int)PlayerCharacteristic.CharacterNamesT.MagDamage])
+                mainScript.DmgInfolabel[0].Text = actuallySender.CharacterValue.ToString();
+
+            if (actuallySender.CharacterName == PlayerCharacteristic.CharacterNames[(int)PlayerCharacteristic.CharacterNamesT.PhysDamage])
+                mainScript.DmgInfolabel[1].Text = actuallySender.CharacterValue.ToString();
+        }
+
+        private int getCurrectlyAspectCode(string characterName)
+        {
+            switch (characterName)
+            {
+                case "FireSM":
+                    return 0;
+
+                case "IceSM":
+                    return 1;
+
+                case "NatureSM":
+                    return 2;
+
+                case "LigthSM":
+                    return 3;
+
+                case "DarkSM":
+                    return 4;
+
+                default:
+                    return -1;
+            }
         }
 
         private int getCurrectlyCode(string characterName)
@@ -254,10 +306,13 @@ namespace Framework.source.scripts.auth
             {
                 case "ForceS":
                     return 0;
+
                 case "AgilityS":
                     return 1;
+
                 case "IntellectS":
                     return 2;
+
                 default:
                     return -1;
             }

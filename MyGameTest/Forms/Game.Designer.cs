@@ -63,17 +63,23 @@
             this.NatureLabel = new System.Windows.Forms.Label();
             this.LigthLabel = new System.Windows.Forms.Label();
             this.DarkLabel = new System.Windows.Forms.Label();
-            this.MainCharactersTablePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.AgilityLabel = new System.Windows.Forms.Label();
-            this.IntellectLabel = new System.Windows.Forms.Label();
-            this.ForceLabel = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pMainWeaponSetup = new System.Windows.Forms.PictureBox();
             this.pSecndWeaponSetup = new System.Windows.Forms.PictureBox();
             this.MainHeroInterfaceBackground = new System.Windows.Forms.PictureBox();
+            this.MagDmg = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.PhysDmg = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.MainCharactersTablePanel = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.AgilityLabel = new System.Windows.Forms.Label();
+            this.IntellectLabel = new System.Windows.Forms.Label();
+            this.ForceLabel = new System.Windows.Forms.Label();
             this.MainInterface.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HeroIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackPackIcon)).BeginInit();
@@ -102,14 +108,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            this.MainCharactersTablePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pMainWeaponSetup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pSecndWeaponSetup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainHeroInterfaceBackground)).BeginInit();
+            this.MainCharactersTablePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // MainInterface
@@ -311,13 +317,14 @@
             // 
             // MainHeroInterface
             // 
+            this.MainHeroInterface.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))), ((int)(((byte)(155)))));
             this.MainHeroInterface.ColumnCount = 6;
-            this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.MainHeroInterface.Controls.Add(this.pHeadSetup, 0, 0);
             this.MainHeroInterface.Controls.Add(this.pBurcletSetup, 0, 1);
             this.MainHeroInterface.Controls.Add(this.pPlateSetup, 0, 2);
@@ -334,11 +341,11 @@
             this.MainHeroInterface.Margin = new System.Windows.Forms.Padding(0);
             this.MainHeroInterface.Name = "MainHeroInterface";
             this.MainHeroInterface.RowCount = 6;
-            this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.MainHeroInterface.Size = new System.Drawing.Size(380, 415);
             this.MainHeroInterface.TabIndex = 7;
@@ -352,7 +359,7 @@
             this.pHeadSetup.Image = ((System.Drawing.Image)(resources.GetObject("pHeadSetup.Image")));
             this.pHeadSetup.Location = new System.Drawing.Point(3, 3);
             this.pHeadSetup.Name = "pHeadSetup";
-            this.pHeadSetup.Size = new System.Drawing.Size(54, 54);
+            this.pHeadSetup.Size = new System.Drawing.Size(60, 60);
             this.pHeadSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pHeadSetup.TabIndex = 1;
             this.pHeadSetup.TabStop = false;
@@ -362,9 +369,9 @@
             this.pBurcletSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pBurcletSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pBurcletSetup.Image = ((System.Drawing.Image)(resources.GetObject("pBurcletSetup.Image")));
-            this.pBurcletSetup.Location = new System.Drawing.Point(3, 63);
+            this.pBurcletSetup.Location = new System.Drawing.Point(3, 69);
             this.pBurcletSetup.Name = "pBurcletSetup";
-            this.pBurcletSetup.Size = new System.Drawing.Size(54, 54);
+            this.pBurcletSetup.Size = new System.Drawing.Size(60, 60);
             this.pBurcletSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBurcletSetup.TabIndex = 2;
             this.pBurcletSetup.TabStop = false;
@@ -374,9 +381,9 @@
             this.pPlateSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pPlateSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pPlateSetup.Image = ((System.Drawing.Image)(resources.GetObject("pPlateSetup.Image")));
-            this.pPlateSetup.Location = new System.Drawing.Point(3, 123);
+            this.pPlateSetup.Location = new System.Drawing.Point(3, 135);
             this.pPlateSetup.Name = "pPlateSetup";
-            this.pPlateSetup.Size = new System.Drawing.Size(54, 54);
+            this.pPlateSetup.Size = new System.Drawing.Size(60, 60);
             this.pPlateSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pPlateSetup.TabIndex = 6;
             this.pPlateSetup.TabStop = false;
@@ -386,9 +393,9 @@
             this.pBuwerSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pBuwerSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pBuwerSetup.Image = ((System.Drawing.Image)(resources.GetObject("pBuwerSetup.Image")));
-            this.pBuwerSetup.Location = new System.Drawing.Point(3, 183);
+            this.pBuwerSetup.Location = new System.Drawing.Point(3, 201);
             this.pBuwerSetup.Name = "pBuwerSetup";
-            this.pBuwerSetup.Size = new System.Drawing.Size(54, 54);
+            this.pBuwerSetup.Size = new System.Drawing.Size(60, 60);
             this.pBuwerSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBuwerSetup.TabIndex = 8;
             this.pBuwerSetup.TabStop = false;
@@ -398,9 +405,9 @@
             this.pHandSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pHandSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pHandSetup.Image = ((System.Drawing.Image)(resources.GetObject("pHandSetup.Image")));
-            this.pHandSetup.Location = new System.Drawing.Point(323, 3);
+            this.pHandSetup.Location = new System.Drawing.Point(317, 3);
             this.pHandSetup.Name = "pHandSetup";
-            this.pHandSetup.Size = new System.Drawing.Size(54, 54);
+            this.pHandSetup.Size = new System.Drawing.Size(60, 60);
             this.pHandSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pHandSetup.TabIndex = 3;
             this.pHandSetup.TabStop = false;
@@ -410,9 +417,9 @@
             this.pJeansSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pJeansSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pJeansSetup.Image = ((System.Drawing.Image)(resources.GetObject("pJeansSetup.Image")));
-            this.pJeansSetup.Location = new System.Drawing.Point(323, 63);
+            this.pJeansSetup.Location = new System.Drawing.Point(317, 69);
             this.pJeansSetup.Name = "pJeansSetup";
-            this.pJeansSetup.Size = new System.Drawing.Size(54, 54);
+            this.pJeansSetup.Size = new System.Drawing.Size(60, 60);
             this.pJeansSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pJeansSetup.TabIndex = 4;
             this.pJeansSetup.TabStop = false;
@@ -422,9 +429,9 @@
             this.pShoesSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pShoesSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pShoesSetup.Image = ((System.Drawing.Image)(resources.GetObject("pShoesSetup.Image")));
-            this.pShoesSetup.Location = new System.Drawing.Point(323, 123);
+            this.pShoesSetup.Location = new System.Drawing.Point(317, 135);
             this.pShoesSetup.Name = "pShoesSetup";
-            this.pShoesSetup.Size = new System.Drawing.Size(54, 54);
+            this.pShoesSetup.Size = new System.Drawing.Size(60, 60);
             this.pShoesSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pShoesSetup.TabIndex = 5;
             this.pShoesSetup.TabStop = false;
@@ -434,9 +441,9 @@
             this.pDifficultySetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pDifficultySetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pDifficultySetup.Image = ((System.Drawing.Image)(resources.GetObject("pDifficultySetup.Image")));
-            this.pDifficultySetup.Location = new System.Drawing.Point(323, 183);
+            this.pDifficultySetup.Location = new System.Drawing.Point(317, 201);
             this.pDifficultySetup.Name = "pDifficultySetup";
-            this.pDifficultySetup.Size = new System.Drawing.Size(54, 54);
+            this.pDifficultySetup.Size = new System.Drawing.Size(60, 60);
             this.pDifficultySetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pDifficultySetup.TabIndex = 7;
             this.pDifficultySetup.TabStop = false;
@@ -444,18 +451,25 @@
             // panel1
             // 
             this.MainHeroInterface.SetColumnSpan(this.panel1, 4);
-            this.panel1.Controls.Add(this.OtherCharactersPanel);
             this.panel1.Controls.Add(this.MainCharactersTablePanel);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.PhysDmg);
+            this.panel1.Controls.Add(this.MagDmg);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.OtherCharactersPanel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(65, 185);
+            this.panel1.Location = new System.Drawing.Point(71, 203);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
             this.MainHeroInterface.SetRowSpan(this.panel1, 3);
-            this.panel1.Size = new System.Drawing.Size(250, 225);
+            this.panel1.Size = new System.Drawing.Size(238, 207);
             this.panel1.TabIndex = 11;
             // 
             // OtherCharactersPanel
             // 
+            this.OtherCharactersPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.OtherCharactersPanel.ColumnCount = 2;
             this.OtherCharactersPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.38235F));
             this.OtherCharactersPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 81.61765F));
@@ -469,7 +483,9 @@
             this.OtherCharactersPanel.Controls.Add(this.NatureLabel, 1, 2);
             this.OtherCharactersPanel.Controls.Add(this.LigthLabel, 1, 3);
             this.OtherCharactersPanel.Controls.Add(this.DarkLabel, 1, 4);
-            this.OtherCharactersPanel.Location = new System.Drawing.Point(144, 7);
+            this.OtherCharactersPanel.Location = new System.Drawing.Point(134, 62);
+            this.OtherCharactersPanel.MaximumSize = new System.Drawing.Size(101, 101);
+            this.OtherCharactersPanel.MinimumSize = new System.Drawing.Size(101, 101);
             this.OtherCharactersPanel.Name = "OtherCharactersPanel";
             this.OtherCharactersPanel.RowCount = 5;
             this.OtherCharactersPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -477,17 +493,17 @@
             this.OtherCharactersPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.OtherCharactersPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.OtherCharactersPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.OtherCharactersPanel.Size = new System.Drawing.Size(103, 103);
+            this.OtherCharactersPanel.Size = new System.Drawing.Size(101, 101);
             this.OtherCharactersPanel.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Firebrick;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(14, 16);
+            this.pictureBox2.Size = new System.Drawing.Size(14, 15);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -495,10 +511,10 @@
             // 
             this.pictureBox14.BackColor = System.Drawing.Color.LightSeaGreen;
             this.pictureBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox14.Location = new System.Drawing.Point(2, 22);
+            this.pictureBox14.Location = new System.Drawing.Point(3, 23);
             this.pictureBox14.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(14, 16);
+            this.pictureBox14.Size = new System.Drawing.Size(14, 15);
             this.pictureBox14.TabIndex = 0;
             this.pictureBox14.TabStop = false;
             // 
@@ -506,10 +522,10 @@
             // 
             this.FireLabel.AutoSize = true;
             this.FireLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FireLabel.Location = new System.Drawing.Point(21, 4);
+            this.FireLabel.Location = new System.Drawing.Point(23, 5);
             this.FireLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FireLabel.Name = "FireLabel";
-            this.FireLabel.Size = new System.Drawing.Size(79, 12);
+            this.FireLabel.Size = new System.Drawing.Size(74, 11);
             this.FireLabel.TabIndex = 0;
             this.FireLabel.Text = "3";
             this.FireLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -518,10 +534,10 @@
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.Chartreuse;
             this.pictureBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox15.Location = new System.Drawing.Point(2, 42);
+            this.pictureBox15.Location = new System.Drawing.Point(3, 43);
             this.pictureBox15.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(14, 16);
+            this.pictureBox15.Size = new System.Drawing.Size(14, 15);
             this.pictureBox15.TabIndex = 0;
             this.pictureBox15.TabStop = false;
             // 
@@ -529,10 +545,10 @@
             // 
             this.pictureBox16.BackColor = System.Drawing.Color.Yellow;
             this.pictureBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox16.Location = new System.Drawing.Point(2, 62);
+            this.pictureBox16.Location = new System.Drawing.Point(3, 63);
             this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(14, 16);
+            this.pictureBox16.Size = new System.Drawing.Size(14, 15);
             this.pictureBox16.TabIndex = 0;
             this.pictureBox16.TabStop = false;
             // 
@@ -540,10 +556,10 @@
             // 
             this.pictureBox17.BackColor = System.Drawing.Color.Indigo;
             this.pictureBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox17.Location = new System.Drawing.Point(2, 82);
+            this.pictureBox17.Location = new System.Drawing.Point(3, 83);
             this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(14, 19);
+            this.pictureBox17.Size = new System.Drawing.Size(14, 15);
             this.pictureBox17.TabIndex = 0;
             this.pictureBox17.TabStop = false;
             // 
@@ -551,10 +567,10 @@
             // 
             this.IceLabel.AutoSize = true;
             this.IceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.IceLabel.Location = new System.Drawing.Point(21, 24);
+            this.IceLabel.Location = new System.Drawing.Point(23, 25);
             this.IceLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.IceLabel.Name = "IceLabel";
-            this.IceLabel.Size = new System.Drawing.Size(79, 12);
+            this.IceLabel.Size = new System.Drawing.Size(74, 11);
             this.IceLabel.TabIndex = 0;
             this.IceLabel.Text = "3";
             this.IceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -563,10 +579,10 @@
             // 
             this.NatureLabel.AutoSize = true;
             this.NatureLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.NatureLabel.Location = new System.Drawing.Point(21, 44);
+            this.NatureLabel.Location = new System.Drawing.Point(23, 45);
             this.NatureLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NatureLabel.Name = "NatureLabel";
-            this.NatureLabel.Size = new System.Drawing.Size(79, 12);
+            this.NatureLabel.Size = new System.Drawing.Size(74, 11);
             this.NatureLabel.TabIndex = 0;
             this.NatureLabel.Text = "3";
             this.NatureLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -575,10 +591,10 @@
             // 
             this.LigthLabel.AutoSize = true;
             this.LigthLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LigthLabel.Location = new System.Drawing.Point(21, 64);
+            this.LigthLabel.Location = new System.Drawing.Point(23, 65);
             this.LigthLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LigthLabel.Name = "LigthLabel";
-            this.LigthLabel.Size = new System.Drawing.Size(79, 12);
+            this.LigthLabel.Size = new System.Drawing.Size(74, 11);
             this.LigthLabel.TabIndex = 0;
             this.LigthLabel.Text = "3";
             this.LigthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -587,102 +603,13 @@
             // 
             this.DarkLabel.AutoSize = true;
             this.DarkLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DarkLabel.Location = new System.Drawing.Point(21, 84);
+            this.DarkLabel.Location = new System.Drawing.Point(23, 85);
             this.DarkLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DarkLabel.Name = "DarkLabel";
-            this.DarkLabel.Size = new System.Drawing.Size(79, 15);
+            this.DarkLabel.Size = new System.Drawing.Size(74, 11);
             this.DarkLabel.TabIndex = 0;
             this.DarkLabel.Text = "3";
             this.DarkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // MainCharactersTablePanel
-            // 
-            this.MainCharactersTablePanel.ColumnCount = 2;
-            this.MainCharactersTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.MainCharactersTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.MainCharactersTablePanel.Controls.Add(this.pictureBox18, 0, 1);
-            this.MainCharactersTablePanel.Controls.Add(this.pictureBox19, 0, 2);
-            this.MainCharactersTablePanel.Controls.Add(this.pictureBox20, 0, 0);
-            this.MainCharactersTablePanel.Controls.Add(this.AgilityLabel, 1, 1);
-            this.MainCharactersTablePanel.Controls.Add(this.IntellectLabel, 1, 2);
-            this.MainCharactersTablePanel.Controls.Add(this.ForceLabel, 1, 0);
-            this.MainCharactersTablePanel.Location = new System.Drawing.Point(10, 7);
-            this.MainCharactersTablePanel.Name = "MainCharactersTablePanel";
-            this.MainCharactersTablePanel.RowCount = 3;
-            this.MainCharactersTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.MainCharactersTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.MainCharactersTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.MainCharactersTablePanel.Size = new System.Drawing.Size(88, 89);
-            this.MainCharactersTablePanel.TabIndex = 4;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.pictureBox18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox18.Location = new System.Drawing.Point(2, 32);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox18.TabIndex = 0;
-            this.pictureBox18.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.pictureBox19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox19.Location = new System.Drawing.Point(2, 62);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox19.TabIndex = 0;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox20.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox20.TabIndex = 0;
-            this.pictureBox20.TabStop = false;
-            // 
-            // AgilityLabel
-            // 
-            this.AgilityLabel.AutoSize = true;
-            this.AgilityLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AgilityLabel.Location = new System.Drawing.Point(33, 34);
-            this.AgilityLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.AgilityLabel.Name = "AgilityLabel";
-            this.AgilityLabel.Size = new System.Drawing.Size(52, 22);
-            this.AgilityLabel.TabIndex = 0;
-            this.AgilityLabel.Text = "3";
-            this.AgilityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // IntellectLabel
-            // 
-            this.IntellectLabel.AutoSize = true;
-            this.IntellectLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.IntellectLabel.Location = new System.Drawing.Point(33, 64);
-            this.IntellectLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.IntellectLabel.Name = "IntellectLabel";
-            this.IntellectLabel.Size = new System.Drawing.Size(52, 22);
-            this.IntellectLabel.TabIndex = 0;
-            this.IntellectLabel.Text = "3";
-            this.IntellectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ForceLabel
-            // 
-            this.ForceLabel.AutoSize = true;
-            this.ForceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ForceLabel.Location = new System.Drawing.Point(33, 4);
-            this.ForceLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ForceLabel.Name = "ForceLabel";
-            this.ForceLabel.Size = new System.Drawing.Size(52, 22);
-            this.ForceLabel.TabIndex = 0;
-            this.ForceLabel.Text = "3";
-            this.ForceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox3
             // 
@@ -690,11 +617,11 @@
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.MainHeroInterface.SetColumnSpan(this.pictureBox3, 4);
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(75, 5);
+            this.pictureBox3.Location = new System.Drawing.Point(81, 5);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(15, 5, 15, 5);
             this.pictureBox3.Name = "pictureBox3";
             this.MainHeroInterface.SetRowSpan(this.pictureBox3, 3);
-            this.pictureBox3.Size = new System.Drawing.Size(230, 170);
+            this.pictureBox3.Size = new System.Drawing.Size(218, 188);
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
@@ -703,9 +630,9 @@
             this.pMainWeaponSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pMainWeaponSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pMainWeaponSetup.Image = ((System.Drawing.Image)(resources.GetObject("pMainWeaponSetup.Image")));
-            this.pMainWeaponSetup.Location = new System.Drawing.Point(3, 243);
+            this.pMainWeaponSetup.Location = new System.Drawing.Point(3, 267);
             this.pMainWeaponSetup.Name = "pMainWeaponSetup";
-            this.pMainWeaponSetup.Size = new System.Drawing.Size(54, 54);
+            this.pMainWeaponSetup.Size = new System.Drawing.Size(60, 60);
             this.pMainWeaponSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pMainWeaponSetup.TabIndex = 10;
             this.pMainWeaponSetup.TabStop = false;
@@ -715,9 +642,9 @@
             this.pSecndWeaponSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pSecndWeaponSetup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pSecndWeaponSetup.Image = ((System.Drawing.Image)(resources.GetObject("pSecndWeaponSetup.Image")));
-            this.pSecndWeaponSetup.Location = new System.Drawing.Point(323, 243);
+            this.pSecndWeaponSetup.Location = new System.Drawing.Point(317, 267);
             this.pSecndWeaponSetup.Name = "pSecndWeaponSetup";
-            this.pSecndWeaponSetup.Size = new System.Drawing.Size(54, 54);
+            this.pSecndWeaponSetup.Size = new System.Drawing.Size(60, 60);
             this.pSecndWeaponSetup.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pSecndWeaponSetup.TabIndex = 9;
             this.pSecndWeaponSetup.TabStop = false;
@@ -732,6 +659,163 @@
             this.MainHeroInterfaceBackground.TabIndex = 6;
             this.MainHeroInterfaceBackground.TabStop = false;
             this.MainHeroInterfaceBackground.Visible = false;
+            // 
+            // MagDmg
+            // 
+            this.MagDmg.AutoSize = true;
+            this.MagDmg.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MagDmg.Location = new System.Drawing.Point(69, 39);
+            this.MagDmg.Margin = new System.Windows.Forms.Padding(5);
+            this.MagDmg.Name = "MagDmg";
+            this.MagDmg.Size = new System.Drawing.Size(21, 15);
+            this.MagDmg.TabIndex = 5;
+            this.MagDmg.Text = "21";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(7, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 30);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Тип урона: \r\nМагический";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(5, 39);
+            this.label2.Margin = new System.Windows.Forms.Padding(5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 15);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Урон: ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(109, 5);
+            this.label3.Margin = new System.Windows.Forms.Padding(5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 30);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "   Тип урона: \r\n   Физический";
+            // 
+            // PhysDmg
+            // 
+            this.PhysDmg.AutoSize = true;
+            this.PhysDmg.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PhysDmg.Location = new System.Drawing.Point(195, 39);
+            this.PhysDmg.Margin = new System.Windows.Forms.Padding(5);
+            this.PhysDmg.Name = "PhysDmg";
+            this.PhysDmg.Size = new System.Drawing.Size(21, 15);
+            this.PhysDmg.TabIndex = 5;
+            this.PhysDmg.Text = "21";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(131, 39);
+            this.label5.Margin = new System.Windows.Forms.Padding(5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 15);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Урон: ";
+            // 
+            // MainCharactersTablePanel
+            // 
+            this.MainCharactersTablePanel.ColumnCount = 2;
+            this.MainCharactersTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.MainCharactersTablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.MainCharactersTablePanel.Controls.Add(this.pictureBox4, 0, 1);
+            this.MainCharactersTablePanel.Controls.Add(this.pictureBox5, 0, 2);
+            this.MainCharactersTablePanel.Controls.Add(this.pictureBox6, 0, 0);
+            this.MainCharactersTablePanel.Controls.Add(this.AgilityLabel, 1, 1);
+            this.MainCharactersTablePanel.Controls.Add(this.IntellectLabel, 1, 2);
+            this.MainCharactersTablePanel.Controls.Add(this.ForceLabel, 1, 0);
+            this.MainCharactersTablePanel.Location = new System.Drawing.Point(3, 62);
+            this.MainCharactersTablePanel.MaximumSize = new System.Drawing.Size(110, 91);
+            this.MainCharactersTablePanel.MinimumSize = new System.Drawing.Size(110, 91);
+            this.MainCharactersTablePanel.Name = "MainCharactersTablePanel";
+            this.MainCharactersTablePanel.RowCount = 3;
+            this.MainCharactersTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainCharactersTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainCharactersTablePanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.MainCharactersTablePanel.Size = new System.Drawing.Size(110, 91);
+            this.MainCharactersTablePanel.TabIndex = 6;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox4.Location = new System.Drawing.Point(2, 32);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox5.Location = new System.Drawing.Point(2, 62);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(26, 27);
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox6.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
+            // 
+            // AgilityLabel
+            // 
+            this.AgilityLabel.AutoSize = true;
+            this.AgilityLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AgilityLabel.Location = new System.Drawing.Point(33, 34);
+            this.AgilityLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.AgilityLabel.Name = "AgilityLabel";
+            this.AgilityLabel.Size = new System.Drawing.Size(74, 22);
+            this.AgilityLabel.TabIndex = 0;
+            this.AgilityLabel.Text = "3";
+            this.AgilityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // IntellectLabel
+            // 
+            this.IntellectLabel.AutoSize = true;
+            this.IntellectLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.IntellectLabel.Location = new System.Drawing.Point(33, 64);
+            this.IntellectLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.IntellectLabel.Name = "IntellectLabel";
+            this.IntellectLabel.Size = new System.Drawing.Size(74, 23);
+            this.IntellectLabel.TabIndex = 0;
+            this.IntellectLabel.Text = "3";
+            this.IntellectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ForceLabel
+            // 
+            this.ForceLabel.AutoSize = true;
+            this.ForceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ForceLabel.Location = new System.Drawing.Point(33, 4);
+            this.ForceLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ForceLabel.Name = "ForceLabel";
+            this.ForceLabel.Size = new System.Drawing.Size(74, 22);
+            this.ForceLabel.TabIndex = 0;
+            this.ForceLabel.Text = "3";
+            this.ForceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Game
             // 
@@ -771,6 +855,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pShoesSetup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pDifficultySetup)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.OtherCharactersPanel.ResumeLayout(false);
             this.OtherCharactersPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -778,15 +863,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            this.MainCharactersTablePanel.ResumeLayout(false);
-            this.MainCharactersTablePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pMainWeaponSetup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pSecndWeaponSetup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainHeroInterfaceBackground)).EndInit();
+            this.MainCharactersTablePanel.ResumeLayout(false);
+            this.MainCharactersTablePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -831,10 +916,16 @@
         private System.Windows.Forms.Label NatureLabel;
         private System.Windows.Forms.Label LigthLabel;
         private System.Windows.Forms.Label DarkLabel;
+        private System.Windows.Forms.Label MagDmg;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label PhysDmg;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TableLayoutPanel MainCharactersTablePanel;
-        private System.Windows.Forms.PictureBox pictureBox18;
-        private System.Windows.Forms.PictureBox pictureBox19;
-        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label AgilityLabel;
         private System.Windows.Forms.Label IntellectLabel;
         private System.Windows.Forms.Label ForceLabel;

@@ -51,6 +51,17 @@ namespace GameFramework.Forms
             script.AFILabels[1] = AgilityLabel;
             script.AFILabels[2] = IntellectLabel;
 
+            script.AspectsLabel = new Label[5];
+            script.AspectsLabel[0] = FireLabel;
+            script.AspectsLabel[1] = IceLabel;
+            script.AspectsLabel[2] = NatureLabel;
+            script.AspectsLabel[3] = LigthLabel;
+            script.AspectsLabel[4] = DarkLabel;
+
+            script.DmgInfolabel = new Label[2];
+            script.DmgInfolabel[0] = MagDmg;
+            script.DmgInfolabel[1] = PhysDmg;
+
             Graphic g = new Graphic();
             g.SetAllPictureBoxMouseEvents(MainInterface.Controls, Color.FromArgb(35, 100, 20, 100), Color.FromArgb(35, 100, 20, 100));
         }
@@ -162,6 +173,7 @@ namespace GameFramework.Forms
                 var TablePanel = (TableLayoutPanel)parentFlowLayoutPanel0;
                 TablePanel.Controls.Remove(ItemBoxPanel);
 
+                script.Player.DesetItem(ItemBoxPanel.GetItemEntity);
                 ItemBox itemBox = new ItemBox(ItemBoxPanel.GetItemEntity);
                 pol.Controls.Add(itemBox);
 

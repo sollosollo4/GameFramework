@@ -64,10 +64,9 @@
             // 
             // ItemName
             // 
-            this.ItemName.AutoSize = true;
             this.ItemName.Location = new System.Drawing.Point(3, 0);
             this.ItemName.Name = "ItemName";
-            this.ItemName.Size = new System.Drawing.Size(105, 15);
+            this.ItemName.Size = new System.Drawing.Size(260, 15);
             this.ItemName.TabIndex = 0;
             this.ItemName.Text = "ItemName+(lvl)";
             // 
@@ -306,7 +305,7 @@
             // DamageLabel
             // 
             this.DamageLabel.AutoSize = true;
-            this.DamageLabel.Location = new System.Drawing.Point(17, 20);
+            this.DamageLabel.Location = new System.Drawing.Point(6, 18);
             this.DamageLabel.Name = "DamageLabel";
             this.DamageLabel.Size = new System.Drawing.Size(28, 15);
             this.DamageLabel.TabIndex = 0;

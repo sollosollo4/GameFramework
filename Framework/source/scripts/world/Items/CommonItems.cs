@@ -12,5 +12,8 @@ namespace Framework.source.scripts.world.Items
         public CommonItems()
         {
         }
+
+        private int id;
+        public override int ID { get => id; set => id = value; }
     }
 }

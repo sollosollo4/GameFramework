@@ -15,11 +15,6 @@ namespace Framework.Controls
     {
         public ItemEntity ItemEntity;
 
-        public MultiToolTip()
-        {
-            InitializeComponent();
-        }
-
         private void MultiToolTip_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.ShiftKey)
@@ -74,9 +69,17 @@ namespace Framework.Controls
             ItemName.Text = item.ItemName.Name;
             ToolTip.ForeColor = Color.FromArgb(90, item.ItemName.QualityColor);
 
-            DamageLabel.Text = item.IntableCharacters.SingleOrDefault(x => x.CharacterName ==
+            var dmg = item.IntableCharacters.SingleOrDefault(x => x.CharacterName ==
                 ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.Damage]).CharacterValue.ToString(); 
             
+            if(Convert.ToInt32(dmg) > 0)
+            {
+                DamageLabel.Text = "Урон: +" + dmg;
+            }
+            else {
+                DamageLabel.Text = "Урон: " + dmg;
+            }
+
             AgilityLabel.Text = item.IntableCharacters.SingleOrDefault(x => x.CharacterName ==
                 ItemCharacter<int>.CharacterNames[(int)ItemCharacter<int>.CharacterNamesT.Agility]).CharacterValue.ToString();
 
