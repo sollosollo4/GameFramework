@@ -62,14 +62,9 @@ namespace Framework.source
             sender.Margin = new Padding(0);
             ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
             contextMenuStrip.Items.Add("Снять", null, UseItemBoxContextStrip);
-
-            sender.ContextMenuStrip = contextMenuStrip;
-            sender.Controls.OfType<Panel>().First().ContextMenuStrip = contextMenuStrip;
-
-            sender.MouseDown += Sender_MouseDown;
-            sender.Controls.OfType<Panel>().First().MouseDown += MainScript_MouseDown;
-
-            sender.RemoveAllEvents();
+            
+            sender.IconPanel.ContextMenuStrip = contextMenuStrip;
+            sender.IconPanel.MouseDown += ItemIcon_MouseDown;
 
             var control = HeroInterfacePanel.GetControlFromPosition(getColumn(cellIndex), getRow(cellIndex));
 
@@ -89,7 +84,6 @@ namespace Framework.source
                 HeroInterfacePanel.Controls.Remove(control);
                 HeroInterfacePanel.Controls.Add(sender, getColumn(cellIndex), getRow(cellIndex));
 
-                
                 BackPackInterfacePanel.Controls.Add(newItemBox);
             }
             else if(control is null)
@@ -99,23 +93,14 @@ namespace Framework.source
 
                 HeroInterfacePanel.Controls.Add(sender, getColumn(cellIndex), getRow(cellIndex));
             }
-        }
+        }        
 
-        private void MainScript_MouseDown(object sender, MouseEventArgs e)
+        private void ItemIcon_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)
             {
                 var newTag = sender as Panel;
                 newTag.ContextMenuStrip.Tag = newTag.Parent;
-            }
-        }
-
-        private void Sender_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Right)
-            {
-                var tags = sender as ItemBox;
-                tags.ContextMenuStrip.Tag = tags;
             }
         }
 
@@ -133,9 +118,17 @@ namespace Framework.source
 
             ItemBox newItemBox = new ItemBox(itembox.GetItemEntity);
             BackPackInterfacePanel.Controls.Add(newItemBox);
+
+            PictureBox pictureBox = new PictureBox() { 
+                Image = getImage(cellIndex), 
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                Margin = new Padding(0),
+                Dock = DockStyle.Fill
+            };
+            HeroInterfacePanel.Controls.Add(pictureBox, getColumn(cellIndex), getRow(cellIndex));
         }
 
-        private int getRow(string cellIndex)
+        public int getRow(string cellIndex)
         {
             switch(cellIndex)
             {
@@ -164,7 +157,7 @@ namespace Framework.source
             }
         }
 
-        private int getColumn(string cellIndex)
+        public int getColumn(string cellIndex)
         {
             switch (cellIndex)
             {
@@ -190,6 +183,35 @@ namespace Framework.source
                     return 0;
                 default:
                     return -1;
+            }
+        }
+
+        public Image getImage(string cellIndex)
+        {
+            switch (cellIndex)
+            {
+                case "Head":
+                    return Properties.Resources.ItemHead;
+                case "Burclet":
+                    return Properties.Resources.ItemBurclet;
+                case "Plate":
+                    return Properties.Resources.ItemPlate;
+                case "Buwer":
+                    return Properties.Resources.ItemBuwer;
+                case "Hand":
+                    return Properties.Resources.ItemHand;
+                case "Jeans":
+                    return Properties.Resources.ItemJeans;
+                case "Shoe":
+                    return Properties.Resources.ItemShoe;
+                case "Difficulty":
+                    return Properties.Resources.ItemDifficulty;
+                case "MainWeapon":
+                    return Properties.Resources.ItemWeaponMain;
+                case "SecondWeapon":
+                    return Properties.Resources.ItemWeaponSecond;
+                default:
+                    return null;
             }
         }
     }

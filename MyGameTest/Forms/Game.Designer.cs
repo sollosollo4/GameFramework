@@ -43,7 +43,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BackGround = new System.Windows.Forms.Panel();
             this.MainHeroInterface = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pHeadSetup = new System.Windows.Forms.PictureBox();
             this.pBurcletSetup = new System.Windows.Forms.PictureBox();
             this.pPlateSetup = new System.Windows.Forms.PictureBox();
@@ -71,6 +70,7 @@
             this.AgilityLabel = new System.Windows.Forms.Label();
             this.IntellectLabel = new System.Windows.Forms.Label();
             this.ForceLabel = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pMainWeaponSetup = new System.Windows.Forms.PictureBox();
             this.pSecndWeaponSetup = new System.Windows.Forms.PictureBox();
             this.MainHeroInterfaceBackground = new System.Windows.Forms.PictureBox();
@@ -87,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BackGround.SuspendLayout();
             this.MainHeroInterface.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHeadSetup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBurcletSetup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pPlateSetup)).BeginInit();
@@ -107,6 +106,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pMainWeaponSetup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pSecndWeaponSetup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainHeroInterfaceBackground)).BeginInit();
@@ -257,6 +257,7 @@
             // 
             // BackPackInterface
             // 
+            this.BackPackInterface.AllowDrop = true;
             this.BackPackInterface.AutoScroll = true;
             this.BackPackInterface.BackColor = System.Drawing.Color.Transparent;
             this.BackPackInterface.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -267,6 +268,8 @@
             this.BackPackInterface.Size = new System.Drawing.Size(753, 351);
             this.BackPackInterface.TabIndex = 2;
             this.BackPackInterface.Visible = false;
+            this.BackPackInterface.DragDrop += new System.Windows.Forms.DragEventHandler(this.BackPackInterface_DragDrop);
+            this.BackPackInterface.DragEnter += new System.Windows.Forms.DragEventHandler(this.BackPackInterface_DragEnter);
             // 
             // BackPackInterfaceBackGround
             // 
@@ -341,20 +344,6 @@
             this.MainHeroInterface.TabIndex = 7;
             this.MainHeroInterface.Visible = false;
             this.MainHeroInterface.VisibleChanged += new System.EventHandler(this.MainHeroInterface_VisibleChanged);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MainHeroInterface.SetColumnSpan(this.pictureBox3, 4);
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(75, 5);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(15, 5, 15, 5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.MainHeroInterface.SetRowSpan(this.pictureBox3, 3);
-            this.pictureBox3.Size = new System.Drawing.Size(230, 170);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
             // 
             // pHeadSetup
             // 
@@ -695,6 +684,20 @@
             this.ForceLabel.Text = "3";
             this.ForceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MainHeroInterface.SetColumnSpan(this.pictureBox3, 4);
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Location = new System.Drawing.Point(75, 5);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(15, 5, 15, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.MainHeroInterface.SetRowSpan(this.pictureBox3, 3);
+            this.pictureBox3.Size = new System.Drawing.Size(230, 170);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
             // pMainWeaponSetup
             // 
             this.pMainWeaponSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -744,6 +747,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Game_FormClosed);
             this.Load += new System.EventHandler(this.Game_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Game_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Game_KeyUp);
             this.MainInterface.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HeroIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackPackIcon)).EndInit();
@@ -758,7 +762,6 @@
             this.BackGround.ResumeLayout(false);
             this.BackGround.PerformLayout();
             this.MainHeroInterface.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pHeadSetup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBurcletSetup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pPlateSetup)).EndInit();
@@ -780,6 +783,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pMainWeaponSetup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pSecndWeaponSetup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainHeroInterfaceBackground)).EndInit();

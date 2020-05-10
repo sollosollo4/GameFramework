@@ -117,4 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ItemBurclet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemBurclet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemBuwer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemBuwer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemDifficulty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemDifficulty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemHand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemHand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemHead" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemHead.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemJeans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemJeans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemPlate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemPlate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemShoe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemShoe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemWeaponMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemWeaponMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ItemWeaponSecond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ItemWeaponSecond.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

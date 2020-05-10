@@ -105,5 +105,35 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemBurclet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemBuwer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemDifficulty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemHand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemHead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemJeans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemPlate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemShoe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemWeaponMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ItemWeaponSecond.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

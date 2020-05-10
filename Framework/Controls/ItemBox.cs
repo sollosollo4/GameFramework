@@ -17,6 +17,7 @@ namespace Framework.Controls
         public MultiToolTip MultiToolTip;
         public ItemEntity GetItemEntity;
         ContextMenuStrip contextMenuStrip;
+        public Panel IconPanel;
 
         public ItemBox(ItemEntity item)
         {
@@ -42,24 +43,20 @@ namespace Framework.Controls
             ItemIcon.MouseEnter += ItemIcon_MouseEnter;
             ItemIcon.MouseLeave += ItemIcon_MouseLeave;
             ItemIcon.AllowDrop = true;
-
-            this.MouseDown += ItemBox_MouseDown;
+            
             ItemIcon.MouseDown += ItemIcon_MouseDown;
-
-            this.DragEnter += ItemBox_DragEnter;
-            this.DragDrop += ItemBox_DragDrop;
+            
             ItemIcon.DragEnter += ItemBox_DragEnter;
             ItemIcon.DragDrop += ItemIcon_DragDrop;
 
             Controls.Add(ItemIcon);
+            IconPanel = ItemIcon;
 
             contextMenuStrip = new ContextMenuStrip();
             contextMenuStrip.Items.Add("Надеть", null, UseItemBoxContextStrip);
             contextMenuStrip.Items.Add("Удалить", null, DeleteItemBoxContextStrip);
             this.ContextMenuStrip = contextMenuStrip;
             
-
-
             MultiToolTip = new MultiToolTip(item);
         }
 
@@ -76,13 +73,9 @@ namespace Framework.Controls
 
         internal void RemoveAllEvents()
         {
-            this.MouseDown -= ItemBox_MouseDown;
-            Controls.OfType<Panel>().First().MouseDown -= ItemIcon_MouseDown;
-
-            this.DragEnter -= ItemBox_DragEnter;
-            this.DragDrop -= ItemBox_DragDrop;
-            Controls.OfType<Panel>().First().DragEnter -= ItemBox_DragEnter;
-            Controls.OfType<Panel>().First().DragDrop -= ItemIcon_DragDrop;
+            IconPanel.MouseDown -= ItemIcon_MouseDown;
+            IconPanel.DragEnter -= ItemBox_DragEnter;
+            IconPanel.DragDrop -= ItemIcon_DragDrop;
         }
 
         private void UseItemBoxContextStrip(object sender, EventArgs e)
@@ -92,28 +85,74 @@ namespace Framework.Controls
 
         private void ItemIcon_DragDrop(object sender, DragEventArgs e)
         {
-            var pol = (Panel)sender;
+            var pol = (Panel)sender; // на кого
+            var objectToDrag = (Panel)e.Data.GetData(typeof(Panel)); // кто
+            Control flowLayoutPanelDrop = null;
+            if (pol == null)
+                flowLayoutPanelDrop = (FlowLayoutPanel)sender; // если мы кидаем на Flow LayoutPanel
 
-            var objectToDrag = (Panel)e.Data.GetData(typeof(Panel));
 
-            var parentFlowLayutPanel = (FlowLayoutPanel)pol.Parent.Parent;
-            int newIndex = 0;
+            var ItemBoxPanel = (ItemBox)pol.Parent; // на кого
+            var ItemBoxPanel2 = (ItemBox)objectToDrag.Parent;// кто
 
-            if(objectToDrag != null)
-                newIndex = parentFlowLayutPanel.Controls.IndexOf(objectToDrag);
-            else
+            Control parentFlowLayoutPanel = ItemBoxPanel.Parent; // родитель панели на которую мы кидаем
+            Control parentFlowLayoutPanel0 = ItemBoxPanel2.Parent; // родитель панель с которой кидаем
+
+            if (parentFlowLayoutPanel is FlowLayoutPanel && parentFlowLayoutPanel0 is FlowLayoutPanel)
             {
-                var newObjectToDrag = (ItemBox)e.Data.GetData(typeof(ItemBox));
-                newIndex = parentFlowLayutPanel.Controls.IndexOf(newObjectToDrag);
+                var Panel = (FlowLayoutPanel)parentFlowLayoutPanel;
+
+                int newIndex = 0;
+                newIndex = Panel.Controls.IndexOf(ItemBoxPanel2);
+
+                Panel.Controls.SetChildIndex(ItemBoxPanel, newIndex);
             }
+            else if (parentFlowLayoutPanel0 is TableLayoutPanel && parentFlowLayoutPanel is FlowLayoutPanel)
+            {
+                var TablePanel = (TableLayoutPanel)parentFlowLayoutPanel0;
+                var flowLayoutPanel = (FlowLayoutPanel)parentFlowLayoutPanel;
 
-            parentFlowLayutPanel.Controls.SetChildIndex(pol.Parent, newIndex);
-        }
+                var cellIndex = ItemBoxPanel.GetItemEntity.StringableCharacters.FirstOrDefault(x => x.CharacterName == ItemCharacter<string>.CharacterNames[(int)ItemCharacter<string>.CharacterNamesT.EquipType]).CharacterValue;
+                var cellIndex0 = ItemBoxPanel2.GetItemEntity.StringableCharacters.FirstOrDefault(x => x.CharacterName == ItemCharacter<string>.CharacterNames[(int)ItemCharacter<string>.CharacterNamesT.EquipType]).CharacterValue;
 
-        private void ItemBox_DragDrop(object sender, DragEventArgs e)
-        {
-            var pol = (ItemBox)sender;
+                if (cellIndex == cellIndex0)
+                {
+                    TablePanel.Controls.Remove(ItemBoxPanel2); // Снимаем 
+                    ItemBoxPanel2.GetItemEntity.MainScript.Player.DesetItem(ItemBoxPanel2.GetItemEntity);
 
+                    flowLayoutPanel.Controls.Remove(ItemBoxPanel); // Надеваем
+                    ItemBoxPanel.GetItemEntity.MainScript.Player.SetItem(ItemBoxPanel.GetItemEntity);
+
+                    var newItemBox = new ItemBox(ItemBoxPanel2.GetItemEntity);
+                    var newItemBox0 = new ItemBox(ItemBoxPanel.GetItemEntity) { Margin = new Padding(0) };
+
+                    TablePanel.Controls.Add(newItemBox0, getColumn(cellIndex), getRow(cellIndex));
+                    flowLayoutPanel.Controls.Add(newItemBox);
+                }
+            }
+            if(parentFlowLayoutPanel0 is FlowLayoutPanel && parentFlowLayoutPanel is TableLayoutPanel)
+            {
+                var TablePanel = (TableLayoutPanel)parentFlowLayoutPanel;
+                var flowLayoutPanel = (FlowLayoutPanel)parentFlowLayoutPanel0;
+
+                var cellIndex = ItemBoxPanel.GetItemEntity.StringableCharacters.FirstOrDefault(x => x.CharacterName == ItemCharacter<string>.CharacterNames[(int)ItemCharacter<string>.CharacterNamesT.EquipType]).CharacterValue;
+                var cellIndex0 = ItemBoxPanel2.GetItemEntity.StringableCharacters.FirstOrDefault(x => x.CharacterName == ItemCharacter<string>.CharacterNames[(int)ItemCharacter<string>.CharacterNamesT.EquipType]).CharacterValue;
+
+                if(cellIndex == cellIndex0)
+                {
+                    TablePanel.Controls.Remove(ItemBoxPanel); // Снимаем 
+                    ItemBoxPanel2.GetItemEntity.MainScript.Player.DesetItem(ItemBoxPanel.GetItemEntity);
+
+                    flowLayoutPanel.Controls.Remove(ItemBoxPanel2); // Надеваем
+                    ItemBoxPanel.GetItemEntity.MainScript.Player.SetItem(ItemBoxPanel2.GetItemEntity);
+
+                    var newItemBox = new ItemBox(ItemBoxPanel.GetItemEntity);
+                    var newItemBox0 = new ItemBox(ItemBoxPanel2.GetItemEntity) { Margin = new Padding(0) };
+
+                    TablePanel.Controls.Add(newItemBox0, getColumn(cellIndex), getRow(cellIndex));
+                    flowLayoutPanel.Controls.Add(newItemBox);
+                }
+            }
         }
 
         private void ItemBox_DragEnter(object sender, DragEventArgs e)
@@ -121,13 +160,12 @@ namespace Framework.Controls
             e.Effect = DragDropEffects.All;
         }
 
-
         private void ItemIcon_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
                 var control = sender as Panel;
-                ItemBox_MouseDown(control.Parent, e);
+                this.DoDragDrop(control, DragDropEffects.Move);
             }
 
             if (e.Button == MouseButtons.Right)
@@ -136,22 +174,6 @@ namespace Framework.Controls
                 contextMenuStrip.Tag = newTag.Parent;
             }
         }
-
-        private void ItemBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                var control = sender as ItemBox;
-                this.DoDragDrop(control, DragDropEffects.Move);
-            }
-
-            if (e.Button == MouseButtons.Right)
-            {
-                var tags = sender as ItemBox;
-                contextMenuStrip.Tag = tags;
-            }
-        }
-
 
         private void ItemIcon_Paint(object sender, PaintEventArgs e)
         {
@@ -195,6 +217,64 @@ namespace Framework.Controls
             Point newPoint = new Point(this.Location.X + this.Size.Width - 15 + Parent.Location.X, this.Location.Y + this.Size.Height - 195 + Parent.Location.Y);
             MultiToolTip.Location = newPoint;
             MultiToolTip.Show();
+        }
+
+        private int getRow(string cellIndex)
+        {
+            switch (cellIndex)
+            {
+                case "Head":
+                    return 0;
+                case "Burclet":
+                    return 1;
+                case "Plate":
+                    return 2;
+                case "Buwer":
+                    return 3;
+                case "Hand":
+                    return 0;
+                case "Jeans":
+                    return 1;
+                case "Shoe":
+                    return 2;
+                case "Difficulty":
+                    return 3;
+                case "MainWeapon":
+                    return 4;
+                case "SecondWeapon":
+                    return 4;
+                default:
+                    return -1;
+            }
+        }
+
+        private int getColumn(string cellIndex)
+        {
+            switch (cellIndex)
+            {
+                case "Head":
+                    return 0;
+                case "Burclet":
+                    return 0;
+                case "Plate":
+                    return 0;
+                case "Buwer":
+                    return 0;
+                case "Hand":
+                    return 5;
+                case "Jeans":
+                    return 5;
+                case "Shoe":
+                    return 5;
+                case "Difficulty":
+                    return 5;
+                case "MainWeapon":
+                    return 0;
+                case "SecondWeapon":
+                    return 0;
+                default:
+                    return -1;
+            }
         }
     }
 }

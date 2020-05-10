@@ -1,5 +1,6 @@
 ﻿using Framework.Controls;
 using Framework.source;
+using Framework.source.scripts.world;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -81,6 +82,11 @@ namespace GameFramework.Forms
             }
         }
 
+        private void Game_KeyUp(object sender, KeyEventArgs e)
+        {
+            Keys keys = Control.ModifierKeys;
+        }
+
         private void Game_FormClosed(object sender, FormClosedEventArgs e)
         {
             mainMenu.Close();
@@ -131,6 +137,44 @@ namespace GameFramework.Forms
         private void MainHeroInterface_VisibleChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BackPackInterface_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BackPackInterface_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void BackPackInterface_DragDrop(object sender, DragEventArgs e)
+        {
+            var pol = (FlowLayoutPanel)sender; // на кого
+            var objectToDrag = (Panel)e.Data.GetData(typeof(Panel)); // кто
+            
+            var ItemBoxPanel = (ItemBox)objectToDrag.Parent; // кто
+            Control parentFlowLayoutPanel0 = ItemBoxPanel.Parent; // родитель панель с которой кидаем
+
+            if (parentFlowLayoutPanel0 is TableLayoutPanel && pol is FlowLayoutPanel)
+            {
+                var TablePanel = (TableLayoutPanel)parentFlowLayoutPanel0;
+                TablePanel.Controls.Remove(ItemBoxPanel);
+
+                ItemBox itemBox = new ItemBox(ItemBoxPanel.GetItemEntity);
+                pol.Controls.Add(itemBox);
+
+                var cellIndex = ItemBoxPanel.GetItemEntity.StringableCharacters.FirstOrDefault(x => x.CharacterName == ItemCharacter<string>.CharacterNames[(int)ItemCharacter<string>.CharacterNamesT.EquipType]).CharacterValue;
+                PictureBox pictureBox = new PictureBox()
+                {
+                    Image = ItemBoxPanel.GetItemEntity.MainScript.getImage(cellIndex),
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Margin = new Padding(0),
+                    Dock = DockStyle.Fill
+                };
+                TablePanel.Controls.Add(pictureBox, script.getColumn(cellIndex), script.getRow(cellIndex));
+            }
         }
     }
 }

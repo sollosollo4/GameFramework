@@ -13,14 +13,62 @@ namespace Framework.Controls
 {
     public partial class MultiToolTip : Form
     {
+        public ItemEntity ItemEntity;
+
         public MultiToolTip()
         {
             InitializeComponent();
         }
 
+        private void MultiToolTip_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.ShiftKey)
+            {
+                var cellIndex = ItemEntity.StringableCharacters.FirstOrDefault(x => x.CharacterName == ItemCharacter<string>.CharacterNames[(int)ItemCharacter<string>.CharacterNamesT.EquipType]).CharacterValue;
+                var mainscript = ItemEntity.MainScript;
+                var ObjectOnHero = ItemEntity.MainScript.HeroInterfacePanel.GetControlFromPosition(mainscript.getColumn(cellIndex), mainscript.getRow(cellIndex));
+
+                if (ObjectOnHero is PictureBox)
+                {
+                    return;
+                }
+                else if (ObjectOnHero is ItemBox)
+                {
+                    var itemBox = (ItemBox)ObjectOnHero;
+                    itemBox.MultiToolTip.Hide();
+                }
+            }
+        }
+
+        private void MultiToolTip_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Shift)
+            {
+                var cellIndex = ItemEntity.StringableCharacters.FirstOrDefault(x => x.CharacterName == ItemCharacter<string>.CharacterNames[(int)ItemCharacter<string>.CharacterNamesT.EquipType]).CharacterValue;
+                var mainscript = ItemEntity.MainScript;
+                var ObjectOnHero = ItemEntity.MainScript.HeroInterfacePanel.GetControlFromPosition(mainscript.getColumn(cellIndex), mainscript.getRow(cellIndex));
+
+                if (ObjectOnHero is PictureBox)
+                {
+                    return;
+                }
+                else if (ObjectOnHero is ItemBox)
+                {
+                    var itemBox = (ItemBox)ObjectOnHero;
+                    itemBox.MultiToolTip.Show();
+                }
+            }
+        }
+
         public MultiToolTip(ItemEntity item)
         {
+            ItemEntity = item;
             InitializeComponent();
+            TopMost = true;
+
+            this.KeyDown += MultiToolTip_KeyDown;
+            this.KeyUp += MultiToolTip_KeyUp;
+
             this.BackColor = Color.FromArgb(255, item.ItemName.QualityColor);
 
             ItemName.Text = item.ItemName.Name;
