@@ -87,6 +87,8 @@
     <Compile Include="source\scripts\world\Items\CommonItems.cs" />
     <Compile Include="source\scripts\world\Items\ResourceItems.cs" />
     <Compile Include="source\scripts\world\Items\ScriptableItems.cs" />
+    <Compile Include="source\scripts\world\Quests\Quest.cs" />
+    <Compile Include="source\scripts\world\Quests\QuestManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
