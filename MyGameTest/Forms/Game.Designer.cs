@@ -39,7 +39,6 @@
             this.Talking_Icon = new System.Windows.Forms.PictureBox();
             this.Settings_Icon = new System.Windows.Forms.PictureBox();
             this.BackPackInterface = new System.Windows.Forms.FlowLayoutPanel();
-            this.BackPackInterfaceBackGround = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BackGround = new System.Windows.Forms.Panel();
             this.MainHeroInterface = new System.Windows.Forms.TableLayoutPanel();
@@ -66,7 +65,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pMainWeaponSetup = new System.Windows.Forms.PictureBox();
             this.pSecndWeaponSetup = new System.Windows.Forms.PictureBox();
-            this.MainHeroInterfaceBackground = new System.Windows.Forms.PictureBox();
             this.MagDmg = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -80,6 +78,8 @@
             this.AgilityLabel = new System.Windows.Forms.Label();
             this.IntellectLabel = new System.Windows.Forms.Label();
             this.ForceLabel = new System.Windows.Forms.Label();
+            this.MainHeroInterface_BackGround = new System.Windows.Forms.Panel();
+            this.BackPackInterface_BackGround = new System.Windows.Forms.Panel();
             this.MainInterface.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HeroIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackPackIcon)).BeginInit();
@@ -89,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Guild_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Talking_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_Icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BackPackInterfaceBackGround)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BackGround.SuspendLayout();
             this.MainHeroInterface.SuspendLayout();
@@ -111,11 +110,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pMainWeaponSetup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pSecndWeaponSetup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MainHeroInterfaceBackground)).BeginInit();
             this.MainCharactersTablePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.MainHeroInterface_BackGround.SuspendLayout();
+            this.BackPackInterface_BackGround.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainInterface
@@ -265,29 +265,16 @@
             // 
             this.BackPackInterface.AllowDrop = true;
             this.BackPackInterface.AutoScroll = true;
-            this.BackPackInterface.BackColor = System.Drawing.Color.Transparent;
+            this.BackPackInterface.BackColor = System.Drawing.Color.White;
             this.BackPackInterface.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.BackPackInterface.Location = new System.Drawing.Point(806, 463);
+            this.BackPackInterface.Location = new System.Drawing.Point(27, 30);
             this.BackPackInterface.Margin = new System.Windows.Forms.Padding(0);
             this.BackPackInterface.Name = "BackPackInterface";
             this.BackPackInterface.Padding = new System.Windows.Forms.Padding(4);
-            this.BackPackInterface.Size = new System.Drawing.Size(753, 351);
+            this.BackPackInterface.Size = new System.Drawing.Size(753, 358);
             this.BackPackInterface.TabIndex = 2;
-            this.BackPackInterface.Visible = false;
             this.BackPackInterface.DragDrop += new System.Windows.Forms.DragEventHandler(this.BackPackInterface_DragDrop);
             this.BackPackInterface.DragEnter += new System.Windows.Forms.DragEventHandler(this.BackPackInterface_DragEnter);
-            // 
-            // BackPackInterfaceBackGround
-            // 
-            this.BackPackInterfaceBackGround.BackColor = System.Drawing.Color.Transparent;
-            this.BackPackInterfaceBackGround.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.BackPackInterfaceBackGround.Image = ((System.Drawing.Image)(resources.GetObject("BackPackInterfaceBackGround.Image")));
-            this.BackPackInterfaceBackGround.Location = new System.Drawing.Point(780, 430);
-            this.BackPackInterfaceBackGround.Name = "BackPackInterfaceBackGround";
-            this.BackPackInterfaceBackGround.Size = new System.Drawing.Size(808, 417);
-            this.BackPackInterfaceBackGround.TabIndex = 4;
-            this.BackPackInterfaceBackGround.TabStop = false;
-            this.BackPackInterfaceBackGround.Visible = false;
             // 
             // pictureBox1
             // 
@@ -303,12 +290,11 @@
             // BackGround
             // 
             this.BackGround.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.BackGround.Controls.Add(this.MainHeroInterface);
-            this.BackGround.Controls.Add(this.MainHeroInterfaceBackground);
+            this.BackGround.Controls.Add(this.BackPackInterface_BackGround);
+            this.BackGround.Controls.Add(this.MainHeroInterface_BackGround);
             this.BackGround.Controls.Add(this.pictureBox1);
-            this.BackGround.Controls.Add(this.BackPackInterface);
             this.BackGround.Controls.Add(this.MainInterface);
-            this.BackGround.Controls.Add(this.BackPackInterfaceBackGround);
+            this.BackGround.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackGround.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BackGround.Location = new System.Drawing.Point(0, 0);
             this.BackGround.Name = "BackGround";
@@ -317,7 +303,7 @@
             // 
             // MainHeroInterface
             // 
-            this.MainHeroInterface.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))), ((int)(((byte)(155)))));
+            this.MainHeroInterface.BackColor = System.Drawing.Color.Transparent;
             this.MainHeroInterface.ColumnCount = 6;
             this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.MainHeroInterface.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
@@ -337,7 +323,7 @@
             this.MainHeroInterface.Controls.Add(this.pictureBox3, 1, 0);
             this.MainHeroInterface.Controls.Add(this.pMainWeaponSetup, 0, 4);
             this.MainHeroInterface.Controls.Add(this.pSecndWeaponSetup, 5, 4);
-            this.MainHeroInterface.Location = new System.Drawing.Point(43, 151);
+            this.MainHeroInterface.Location = new System.Drawing.Point(29, 15);
             this.MainHeroInterface.Margin = new System.Windows.Forms.Padding(0);
             this.MainHeroInterface.Name = "MainHeroInterface";
             this.MainHeroInterface.RowCount = 6;
@@ -349,7 +335,6 @@
             this.MainHeroInterface.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.MainHeroInterface.Size = new System.Drawing.Size(380, 415);
             this.MainHeroInterface.TabIndex = 7;
-            this.MainHeroInterface.Visible = false;
             this.MainHeroInterface.VisibleChanged += new System.EventHandler(this.MainHeroInterface_VisibleChanged);
             // 
             // pHeadSetup
@@ -649,17 +634,6 @@
             this.pSecndWeaponSetup.TabIndex = 9;
             this.pSecndWeaponSetup.TabStop = false;
             // 
-            // MainHeroInterfaceBackground
-            // 
-            this.MainHeroInterfaceBackground.Image = ((System.Drawing.Image)(resources.GetObject("MainHeroInterfaceBackground.Image")));
-            this.MainHeroInterfaceBackground.Location = new System.Drawing.Point(12, 135);
-            this.MainHeroInterfaceBackground.Name = "MainHeroInterfaceBackground";
-            this.MainHeroInterfaceBackground.Size = new System.Drawing.Size(443, 447);
-            this.MainHeroInterfaceBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.MainHeroInterfaceBackground.TabIndex = 6;
-            this.MainHeroInterfaceBackground.TabStop = false;
-            this.MainHeroInterfaceBackground.Visible = false;
-            // 
             // MagDmg
             // 
             this.MagDmg.AutoSize = true;
@@ -817,6 +791,28 @@
             this.ForceLabel.Text = "3";
             this.ForceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // MainHeroInterface_BackGround
+            // 
+            this.MainHeroInterface_BackGround.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainHeroInterface_BackGround.BackgroundImage")));
+            this.MainHeroInterface_BackGround.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MainHeroInterface_BackGround.Controls.Add(this.MainHeroInterface);
+            this.MainHeroInterface_BackGround.Location = new System.Drawing.Point(12, 150);
+            this.MainHeroInterface_BackGround.Name = "MainHeroInterface_BackGround";
+            this.MainHeroInterface_BackGround.Size = new System.Drawing.Size(443, 447);
+            this.MainHeroInterface_BackGround.TabIndex = 8;
+            this.MainHeroInterface_BackGround.Visible = false;
+            // 
+            // BackPackInterface_BackGround
+            // 
+            this.BackPackInterface_BackGround.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackPackInterface_BackGround.BackgroundImage")));
+            this.BackPackInterface_BackGround.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackPackInterface_BackGround.Controls.Add(this.BackPackInterface);
+            this.BackPackInterface_BackGround.Location = new System.Drawing.Point(780, 430);
+            this.BackPackInterface_BackGround.Name = "BackPackInterface_BackGround";
+            this.BackPackInterface_BackGround.Size = new System.Drawing.Size(808, 417);
+            this.BackPackInterface_BackGround.TabIndex = 9;
+            this.BackPackInterface_BackGround.Visible = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -841,7 +837,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Guild_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Talking_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Settings_Icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BackPackInterfaceBackGround)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.BackGround.ResumeLayout(false);
             this.BackGround.PerformLayout();
@@ -866,12 +861,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pMainWeaponSetup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pSecndWeaponSetup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MainHeroInterfaceBackground)).EndInit();
             this.MainCharactersTablePanel.ResumeLayout(false);
             this.MainCharactersTablePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.MainHeroInterface_BackGround.ResumeLayout(false);
+            this.BackPackInterface_BackGround.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -888,7 +884,6 @@
         private System.Windows.Forms.PictureBox Talking_Icon;
         private System.Windows.Forms.PictureBox Settings_Icon;
         private System.Windows.Forms.FlowLayoutPanel BackPackInterface;
-        private System.Windows.Forms.PictureBox BackPackInterfaceBackGround;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel BackGround;
         private System.Windows.Forms.TableLayoutPanel MainHeroInterface;
@@ -903,7 +898,6 @@
         private System.Windows.Forms.PictureBox pBuwerSetup;
         private System.Windows.Forms.PictureBox pSecndWeaponSetup;
         private System.Windows.Forms.PictureBox pMainWeaponSetup;
-        private System.Windows.Forms.PictureBox MainHeroInterfaceBackground;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel OtherCharactersPanel;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -929,5 +923,7 @@
         private System.Windows.Forms.Label AgilityLabel;
         private System.Windows.Forms.Label IntellectLabel;
         private System.Windows.Forms.Label ForceLabel;
+        private System.Windows.Forms.Panel BackPackInterface_BackGround;
+        private System.Windows.Forms.Panel MainHeroInterface_BackGround;
     }
 }

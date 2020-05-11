@@ -1,6 +1,7 @@
 ﻿using Framework.Controls;
 using Framework.source;
 using Framework.source.scripts.world;
+using SharpGL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,9 @@ namespace GameFramework.Forms
             InitializeComponent();
 
             SetDefaultParametrs();
+
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
             VisibleFirstWindow();
@@ -64,6 +68,8 @@ namespace GameFramework.Forms
 
             Graphic g = new Graphic();
             g.SetAllPictureBoxMouseEvents(MainInterface.Controls, Color.FromArgb(35, 100, 20, 100), Color.FromArgb(35, 100, 20, 100));
+
+            OpenGL gl = openGLControl.
         }
 
         private void Game_Load(object sender, EventArgs e)
@@ -105,14 +111,12 @@ namespace GameFramework.Forms
 
         private void HeroIcon_Click(object sender, EventArgs e)
         {
-            MainHeroInterface.Visible = !MainHeroInterface.Visible;
-            MainHeroInterfaceBackground.Visible = !MainHeroInterfaceBackground.Visible;
+            MainHeroInterface_BackGround.Visible = !MainHeroInterface_BackGround.Visible;
         }
 
         private void BackPackIcon_Click(object sender, EventArgs e)
         {
-            BackPackInterface.Visible = !BackPackInterface.Visible;
-            BackPackInterfaceBackGround.Visible = !BackPackInterfaceBackGround.Visible;
+            BackPackInterface_BackGround.Visible = !BackPackInterface_BackGround.Visible;
         }
 
         private void Achivments_Icon_Click(object sender, EventArgs e)
